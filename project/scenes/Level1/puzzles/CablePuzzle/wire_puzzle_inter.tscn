@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://drmhxijro0dce"]
+
+[ext_resource type="Script" uid="uid://cumu16x2uu3rr" path="res://scripts/Level_1/PipePuzzle/CablePuzzleTrigger.gd" id="1_rrm5c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vlsnl"]
+size = Vector2(188, 483)
+
+[node name="WirePuzzleInter" type="Node2D" unique_id=2035385362]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1335251652]
+script = ExtResource("1_rrm5c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=487832091]
+position = Vector2(92, 240)
+shape = SubResource("RectangleShape2D_vlsnl")
+
+[node name="Text" type="Label" parent="Area2D" unique_id=521148673]
+offset_left = 40.0
+offset_top = 245.0
+offset_right = 185.0
+offset_bottom = 286.0
+theme_override_font_sizes/font_size = 26

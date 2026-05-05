@@ -1,0 +1,40 @@
+{
+  "spots": {
+	"door": {
+	  "name": "Locked Door",
+	  "prompt_open":   "Press E — open the door",
+	  "prompt_use":    "Press E — use {item} on {spot}",
+	  "prompt_locked": "{spot} — requires {item}"
+	},
+	"chest": {
+	  "name": "Chest",
+	  "prompt_open":   "Press E — open the chest",
+	  "prompt_use":    "Press E — use {item} on {spot}",
+	  "prompt_locked": "{spot} — requires {item}"
+	},
+	"pipe_puzzle": {
+	  "name": "Maintenance Terminal",
+	  "prompt_open": "Press E — fix the pipes",
+	  "prompt_use": "Press E — use {item} on terminal",
+	  "prompt_locked": "Terminal Offline — requires {item}"
+	}
+	
+  },
+
+  "items": {
+	"rusty_key": {
+	  "name":        "Rusty Key",
+	  "description": "An old rusty key. It might open something."
+	},
+	"old_note": {
+	  "name":        "Old Note",
+	  "description": "A crumpled note with faded writing."
+	}
+  },
+
+  "ui": {
+	"inventory_title": "Inventory",
+	"inventory_empty": "Empty",
+	"close_button":    "Close"
+  }
+}

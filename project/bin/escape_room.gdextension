@@ -1,0 +1,8 @@
+[configuration]
+entry_symbol = "initialize_inventory_system_module"
+compatibility_minimum = "4.1"
+reloadable = false
+
+[libraries]
+windows.editor.x86_64 = "res://bin/windows/EscapeRoomExt.windows.template_debug.x86_64.dll"
+windows.template_debug.x86_64 = "res://bin/windows/EscapeRoomExt.windows.template_debug.x86_64.dll"

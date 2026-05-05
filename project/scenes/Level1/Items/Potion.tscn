@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dotf55xempmnx"]
+
+[ext_resource type="Texture2D" uid="uid://bcgojm5w5807u" path="res://assets/Test/PoTion.png" id="2_xpeo5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4y27e"]
+radius = 43.1045
+
+[node name="PickableItem" type="Node2D" unique_id=961043091]
+
+[node name="PickableItem" type="Area2D" parent="." unique_id=2112613079]
+position = Vector2(-1, -9)
+
+[node name="Sprite2D" type="Sprite2D" parent="PickableItem" unique_id=875623564]
+position = Vector2(679, 584)
+scale = Vector2(0.368056, 0.367188)
+texture = ExtResource("2_xpeo5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickableItem" unique_id=1274589860]
+position = Vector2(676, 586)
+shape = SubResource("CircleShape2D_4y27e")

@@ -1,0 +1,170 @@
+[gd_scene format=3 uid="uid://bt8hdqt844jwr"]
+
+[ext_resource type="Script" uid="uid://wfnegyw8lwh5" path="res://scripts/Managers/World.gd" id="1_x1okc"]
+[ext_resource type="Texture2D" uid="uid://dkmyw7na6leqp" path="res://assets/Background(Rooms)/lvl 1 - introducere/level 1 big floor checkered.png" id="2_kb74u"]
+[ext_resource type="Texture2D" uid="uid://bryi55k4yjjpp" path="res://assets/Background(Rooms)/lvl 1 - introducere/Wall.png" id="3_x1okc"]
+[ext_resource type="Texture2D" uid="uid://biqyswvil0243" path="res://assets/Background(Rooms)/lvl 1 - introducere/locker.png" id="4_ect7k"]
+[ext_resource type="PackedScene" uid="uid://b2aolcvtf8msm" path="res://scenes/Level1/Lift.tscn" id="4_v5koy"]
+[ext_resource type="PackedScene" uid="uid://cdvnuwaxxnfs5" path="res://scenes/Level1/Items/Key.tscn" id="5_7ibbf"]
+[ext_resource type="PackedScene" uid="uid://dotf55xempmnx" path="res://scenes/Level1/Items/Potion.tscn" id="6_neye0"]
+[ext_resource type="PackedScene" uid="uid://jmis2b40fcu4" path="res://scenes/Player.tscn" id="7_xqmow"]
+[ext_resource type="Script" uid="uid://67myj7hk605y" path="res://scripts/UI/InventoryUI.gd" id="8_o5fci"]
+[ext_resource type="PackedScene" uid="uid://cv30bevscsoom" path="res://scenes/Commons/Pause_menu.tscn" id="9_2uc1i"]
+[ext_resource type="PackedScene" uid="uid://n00kmmd8bfvd" path="res://scenes/Level1/puzzles/SwitchPuzzle/PickableClue.tscn" id="9_o5fci"]
+[ext_resource type="PackedScene" uid="uid://drmhxijro0dce" path="res://scenes/Level1/puzzles/CablePuzzle/wire_puzzle_inter.tscn" id="11_2uc1i"]
+[ext_resource type="PackedScene" uid="uid://cqbxfh4x0g4" path="res://scenes/Level1/puzzles/SwitchPuzzle/SwitchPuzzleInter.tscn" id="11_o5fci"]
+[ext_resource type="Texture2D" uid="uid://c4j6f2krfx1rq" path="res://assets/Background(Rooms)/lvl 1 - introducere/courtain.png" id="11_v5koy"]
+[ext_resource type="PackedScene" uid="uid://kvvh34e4r1sc" path="res://scenes/Level1/puzzles/PipePuzzle/PipePuzzleInter.tscn" id="12_2uc1i"]
+[ext_resource type="PackedScene" uid="uid://gg83fr4jpppe" path="res://scenes/Level1/puzzles/SwitchPuzzle/ReadingUI.tscn" id="12_7ibbf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x1okc"]
+size = Vector2(32.28125, 1647)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ect7k"]
+size = Vector2(48.99994, 2779)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kb74u"]
+size = Vector2(35.75, 2879.5)
+
+[node name="Level1" type="Node2D" unique_id=1195723123]
+script = ExtResource("1_x1okc")
+
+[node name="Background" type="Node2D" parent="." unique_id=781831434]
+
+[node name="FloorTileBig" type="Sprite2D" parent="Background" unique_id=1655187356]
+position = Vector2(1007, 708.25)
+scale = Vector2(0.6549999, 0.44109377)
+texture = ExtResource("2_kb74u")
+
+[node name="FloorTileBig2" type="Sprite2D" parent="Background" unique_id=1584928297]
+position = Vector2(3078, 708.00006)
+scale = Vector2(0.6404688, 0.44109377)
+texture = ExtResource("2_kb74u")
+
+[node name="Wall" type="Sprite2D" parent="Background" unique_id=1541638334]
+position = Vector2(1415, 67)
+scale = Vector2(0.39612108, 0.35910726)
+texture = ExtResource("3_x1okc")
+
+[node name="Locker" type="Sprite2D" parent="Background" unique_id=470648123]
+position = Vector2(74, 4)
+scale = Vector2(0.4045139, 0.35937497)
+texture = ExtResource("4_ect7k")
+
+[node name="Courtain" type="Sprite2D" parent="Background" unique_id=1588930626]
+position = Vector2(2771, 12.000001)
+scale = Vector2(0.36979184, 0.35312507)
+texture = ExtResource("11_v5koy")
+
+[node name="Interactions" type="Node2D" parent="." unique_id=1010245074]
+position = Vector2(67, -20)
+
+[node name="UseSpot" type="Node2D" parent="Interactions" unique_id=256401339]
+position = Vector2(-67, 20)
+
+[node name="Lift" parent="Interactions/UseSpot" unique_id=1666000790 instance=ExtResource("4_v5koy")]
+position = Vector2(748.00006, 946)
+scale = Vector2(0.65, 0.65)
+
+[node name="Items" type="Node2D" parent="Interactions" unique_id=993429395]
+
+[node name="PickableClue" parent="Interactions/Items" unique_id=1451854495 instance=ExtResource("9_o5fci")]
+position = Vector2(1211, 396)
+
+[node name="Key" parent="Interactions/Items" unique_id=179543878 instance=ExtResource("5_7ibbf")]
+position = Vector2(-127, -195)
+
+[node name="Potion" parent="Interactions/Items" unique_id=1929507644 instance=ExtResource("6_neye0")]
+position = Vector2(-44, 254)
+
+[node name="Puzzles" type="Node2D" parent="Interactions" unique_id=235710587]
+
+[node name="interaction_puzzle3" parent="Interactions/Puzzles" unique_id=904449519 instance=ExtResource("11_o5fci")]
+position = Vector2(306, -215)
+
+[node name="PipePuzzleInter" parent="Interactions/Puzzles" unique_id=2126017899 instance=ExtResource("12_2uc1i")]
+position = Vector2(1756, -115)
+
+[node name="WirePuzzleInter" parent="Interactions/Puzzles" unique_id=2035385362 instance=ExtResource("11_2uc1i")]
+position = Vector2(1271, -204)
+
+[node name="PlayerManager" type="Node2D" parent="." unique_id=2134123035]
+
+[node name="Spawn" type="Marker2D" parent="PlayerManager" unique_id=2102824994]
+position = Vector2(915, 703)
+
+[node name="Player" parent="PlayerManager" unique_id=388376052 instance=ExtResource("7_xqmow")]
+position = Vector2(944, 597)
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=132650828]
+
+[node name="ReadingUI" parent="UI" unique_id=1531459707 instance=ExtResource("12_7ibbf")]
+visible = false
+
+[node name="InventoryUI" type="CanvasLayer" parent="UI" unique_id=1965664496]
+script = ExtResource("8_o5fci")
+
+[node name="BagButton" type="Button" parent="UI/InventoryUI" unique_id=328295345]
+anchors_preset = -1
+anchor_right = 0.122
+anchor_bottom = 0.083
+offset_right = -0.544006
+offset_bottom = 0.215996
+grow_horizontal = 2
+grow_vertical = 2
+disabled = true
+text = "🎒"
+
+[node name="Panel" type="PanelContainer" parent="UI/InventoryUI" unique_id=1720318018]
+anchors_preset = -1
+anchor_right = 0.094
+anchor_bottom = 0.066
+offset_top = 1.0
+offset_right = 97.24
+offset_bottom = 37.36
+localize_numeral_system = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/InventoryUI/Panel" unique_id=466216984]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="UI/InventoryUI/Panel/VBoxContainer" unique_id=1786274957]
+layout_mode = 2
+text = "🎒 Inventory"
+
+[node name="ItemList" type="VBoxContainer" parent="UI/InventoryUI/Panel/VBoxContainer" unique_id=1583971892]
+layout_mode = 2
+
+[node name="CloseButton" type="Button" parent="UI/InventoryUI/Panel/VBoxContainer" unique_id=998944648]
+layout_mode = 2
+
+[node name="PauseMenu" parent="UI" unique_id=2111899174 instance=ExtResource("9_2uc1i")]
+visible = false
+
+[node name="MapBorders" type="Node2D" parent="UI" unique_id=1881320483]
+visible = false
+
+[node name="Collision_right" type="StaticBody2D" parent="UI/MapBorders" unique_id=1356145132]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UI/MapBorders/Collision_right" unique_id=1900017746]
+position = Vector2(2679.8594, 599)
+shape = SubResource("RectangleShape2D_x1okc")
+
+[node name="Collision_left" type="StaticBody2D" parent="UI/MapBorders" unique_id=1415034982]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UI/MapBorders/Collision_left" unique_id=456794988]
+position = Vector2(-37, 602)
+shape = SubResource("RectangleShape2D_x1okc")
+
+[node name="Collision_buttom" type="StaticBody2D" parent="UI/MapBorders" unique_id=1438682957]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UI/MapBorders/Collision_buttom" unique_id=891122928]
+position = Vector2(1311, 1341)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_ect7k")
+
+[node name="Collision_top" type="StaticBody2D" parent="UI/MapBorders" unique_id=164567721]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UI/MapBorders/Collision_top" unique_id=1520666243]
+position = Vector2(1372.75, 117.875)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_kb74u")

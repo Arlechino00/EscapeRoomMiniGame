@@ -1,0 +1,148 @@
+[gd_scene format=3 uid="uid://dt3tvn1mafmbi"]
+
+[ext_resource type="Script" uid="uid://wfnegyw8lwh5" path="res://scripts/Managers/World.gd" id="1_ab15c"]
+[ext_resource type="Texture2D" uid="uid://cbpj5oxh6erum" path="res://assets/Background(Rooms)/lvl 3/Floor-tile big ahh.png" id="2_vvvan"]
+[ext_resource type="Texture2D" uid="uid://cl0y1l67bcc8c" path="res://assets/Background(Rooms)/lvl 3/ekko lab wall final.png" id="3_nhwkx"]
+[ext_resource type="PackedScene" uid="uid://b2aolcvtf8msm" path="res://scenes/Level1/Lift.tscn" id="4_vsqj8"]
+[ext_resource type="PackedScene" uid="uid://cdvnuwaxxnfs5" path="res://scenes/Level1/Items/Key.tscn" id="5_ghuut"]
+[ext_resource type="PackedScene" uid="uid://dotf55xempmnx" path="res://scenes/Level1/Items/Potion.tscn" id="6_4clyt"]
+[ext_resource type="PackedScene" uid="uid://jmis2b40fcu4" path="res://scenes/Player.tscn" id="7_2k6pj"]
+[ext_resource type="Script" uid="uid://67myj7hk605y" path="res://scripts/UI/InventoryUI.gd" id="8_q7y7c"]
+[ext_resource type="PackedScene" uid="uid://cv30bevscsoom" path="res://scenes/Commons/Pause_menu.tscn" id="9_vhksi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vvvan"]
+size = Vector2(104, 1885)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nhwkx"]
+size = Vector2(96, 1859)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d33vg"]
+size = Vector2(2400.5, 71)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n504q"]
+size = Vector2(2403, 96)
+
+[node name="Level3" type="Node2D" unique_id=1195723123]
+script = ExtResource("1_ab15c")
+
+[node name="Background" type="Node2D" parent="." unique_id=781831434]
+
+[node name="FloorTileBig" type="Sprite2D" parent="Background" unique_id=1655187356]
+position = Vector2(382.76, 554.68)
+scale = Vector2(0.458, 0.5356389)
+texture = ExtResource("2_vvvan")
+
+[node name="FloorTileBig2" type="Sprite2D" parent="Background" unique_id=1004184248]
+position = Vector2(1551, 554.33997)
+scale = Vector2(0.458, 0.5351805)
+texture = ExtResource("2_vvvan")
+
+[node name="FloorTileBig3" type="Sprite2D" parent="Background" unique_id=502498186]
+position = Vector2(2719, 554.8401)
+scale = Vector2(0.458, 0.53552777)
+texture = ExtResource("2_vvvan")
+
+[node name="Wall2" type="Sprite2D" parent="Background" unique_id=129611842]
+position = Vector2(3021, 5.0000005)
+scale = Vector2(0.3379575, 0.285305)
+texture = ExtResource("3_nhwkx")
+
+[node name="Wall" type="Sprite2D" parent="Background" unique_id=1541638334]
+position = Vector2(1005, 5.0000005)
+scale = Vector2(0.3379575, 0.285305)
+texture = ExtResource("3_nhwkx")
+
+[node name="Interactions" type="Node2D" parent="." unique_id=1010245074]
+position = Vector2(67, -20)
+
+[node name="UseSpot" type="Node2D" parent="Interactions" unique_id=256401339]
+position = Vector2(-67, 20)
+
+[node name="Lift" parent="Interactions/UseSpot" unique_id=1666000790 instance=ExtResource("4_vsqj8")]
+position = Vector2(-1528, 900)
+scale = Vector2(0.94, 0.94)
+
+[node name="Items" type="Node2D" parent="Interactions" unique_id=993429395]
+visible = false
+
+[node name="Key" parent="Interactions/Items" unique_id=179543878 instance=ExtResource("5_ghuut")]
+visible = false
+position = Vector2(-127, -195)
+
+[node name="Potion" parent="Interactions/Items" unique_id=1929507644 instance=ExtResource("6_4clyt")]
+visible = false
+
+[node name="PlayerManager" type="Node2D" parent="." unique_id=2134123035]
+
+[node name="Player" parent="PlayerManager" unique_id=388376052 instance=ExtResource("7_2k6pj")]
+position = Vector2(1744, -107)
+
+[node name="Spawn" type="Marker2D" parent="PlayerManager" unique_id=303136961]
+position = Vector2(1744, -107)
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=132650828]
+
+[node name="InventoryUI" type="CanvasLayer" parent="UI" unique_id=1965664496]
+script = ExtResource("8_q7y7c")
+
+[node name="BagButton" type="Button" parent="UI/InventoryUI" unique_id=328295345]
+anchors_preset = -1
+anchor_right = 0.122
+anchor_bottom = 0.083
+offset_right = -0.544006
+offset_bottom = 0.215996
+grow_horizontal = 2
+grow_vertical = 2
+disabled = true
+text = "🎒"
+
+[node name="Panel" type="PanelContainer" parent="UI/InventoryUI" unique_id=1720318018]
+anchors_preset = -1
+anchor_right = 0.094
+anchor_bottom = 0.066
+offset_top = 1.0
+offset_right = 97.24
+offset_bottom = 37.36
+localize_numeral_system = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/InventoryUI/Panel" unique_id=466216984]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="UI/InventoryUI/Panel/VBoxContainer" unique_id=1786274957]
+layout_mode = 2
+text = "🎒 Inventory"
+
+[node name="ItemList" type="VBoxContainer" parent="UI/InventoryUI/Panel/VBoxContainer" unique_id=1583971892]
+layout_mode = 2
+
+[node name="CloseButton" type="Button" parent="UI/InventoryUI/Panel/VBoxContainer" unique_id=998944648]
+layout_mode = 2
+
+[node name="PauseMenu" parent="UI" unique_id=2111899174 instance=ExtResource("9_vhksi")]
+visible = false
+
+[node name="MapBorders" type="Node2D" parent="UI" unique_id=1473569556]
+
+[node name="CollisionRight" type="StaticBody2D" parent="UI/MapBorders" unique_id=1792786428]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UI/MapBorders/CollisionRight" unique_id=2024164247]
+position = Vector2(1986, 523)
+shape = SubResource("RectangleShape2D_vvvan")
+
+[node name="CollisionLeft" type="StaticBody2D" parent="UI/MapBorders" unique_id=1269776755]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UI/MapBorders/CollisionLeft" unique_id=1381684169]
+position = Vector2(-2, 539)
+shape = SubResource("RectangleShape2D_nhwkx")
+
+[node name="CollisionTop" type="StaticBody2D" parent="UI/MapBorders" unique_id=1184975375]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UI/MapBorders/CollisionTop" unique_id=1301107678]
+position = Vector2(926.75, 82)
+shape = SubResource("RectangleShape2D_d33vg")
+
+[node name="CollisionBottom" type="StaticBody2D" parent="UI/MapBorders" unique_id=1488061979]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UI/MapBorders/CollisionBottom" unique_id=1938450715]
+position = Vector2(968, 1206)
+shape = SubResource("RectangleShape2D_n504q")
