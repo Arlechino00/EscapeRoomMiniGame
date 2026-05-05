@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://dtrrnihluqt7g"]
+
+[ext_resource type="Script" uid="uid://dcjv7ux1erooi" path="res://scripts/Level_2/Lift_Level2_3.gd" id="1_s882d"]
+[ext_resource type="Texture2D" uid="uid://bv66rkgs372l5" path="res://assets/Background(Rooms)/Commos/LiftClosed.png" id="2_s882d"]
+[ext_resource type="Texture2D" uid="uid://c21vpktswhuwr" path="res://assets/Background(Rooms)/Commos/LiftOpen.png" id="3_1e5h4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xwqql"]
+size = Vector2(897.5, 556)
+
+[node name="Lift" type="Node2D" unique_id=1794680910]
+
+[node name="Lift" type="Area2D" parent="." unique_id=366933316]
+position = Vector2(36, -62)
+script = ExtResource("1_s882d")
+
+[node name="SpriteClosed" type="Sprite2D" parent="Lift" unique_id=217334610]
+position = Vector2(220.14996, -1413.5599)
+scale = Vector2(0.36229175, 0.31506574)
+texture = ExtResource("2_s882d")
+
+[node name="SpriteOpen" type="Sprite2D" parent="Lift" unique_id=503088617]
+visible = false
+position = Vector2(220.74998, -1414.68)
+scale = Vector2(0.36145836, 0.31361845)
+texture = ExtResource("3_1e5h4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lift" unique_id=487829900]
+visible = false
+position = Vector2(411, -1324)
+shape = SubResource("RectangleShape2D_xwqql")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Lift" unique_id=422976353]
+
+[node name="Label" type="Label" parent="Lift" unique_id=2075321166]
+offset_left = 200.0
+offset_top = -1369.0
+offset_right = 518.0
+offset_bottom = -1319.0
+theme_override_font_sizes/font_size = 36

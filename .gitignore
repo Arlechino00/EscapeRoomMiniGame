@@ -1,0 +1,63 @@
+# --- Godot Engine ---
+.godot/
+*.tmp
+*.log
+import/
+export/
+*.exe
+*.zip
+
+# --- Visual Studio (Mov) ---
+.vs/
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+*.suo
+*.db
+*.opendb
+*.ide
+*.VC.db
+*.VC.opendb
+
+# --- CLion & JetBrains ---
+.idea/
+cmake-build-*/
+out/
+*.iws
+*.iml
+*.ipr
+
+# --- SCons & Build Artifacts (C++) ---
+# Ignorăm fișierele obiect și resturile de la compilare
+*.obj
+*.o
+*.os
+*.pdb
+*.ilk
+*.exp
+*.lib
+*.a
+*.sconsign.dblite
+.sconsign.dblite
+
+# --- GDExtension Specific ---
+# Ignorăm binarele compilate din folderul bin
+bin/windows/
+bin/linux/
+bin/macos/
+bin/android/
+bin/*.dll
+bin/*.so
+bin/*.dylib
+
+# DAR păstrăm neapărat fișierul de configurare .gdextension
+!bin/*.gdextension
+
+# --- Diverse ---
+.DS_Store
+Thumbs.db
+desktop.ini
+.env
+firebase_credentials.json
+analytics_report.csv

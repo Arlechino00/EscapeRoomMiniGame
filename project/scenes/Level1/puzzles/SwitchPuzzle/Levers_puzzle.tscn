@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://cbavmpmhdwckt"]
+
+[ext_resource type="Texture2D" uid="uid://cprx7nqb34elk" path="res://assets/Objects/lvl1/SwitchPuzzle/Switch-Box.png" id="1_7jjey"]
+[ext_resource type="Script" uid="uid://bofv4b7c8sni1" path="res://scripts/Level_1/SwitchPuzzle/levers_puzzle.gd" id="1_aoe3i"]
+[ext_resource type="Script" uid="uid://qx3dxb802of" path="res://scripts/Level_1/SwitchPuzzle/switch_box.gd" id="2_7kqb6"]
+[ext_resource type="PackedScene" uid="uid://8t7xwhnw30em" path="res://scenes/Level1/puzzles/SwitchPuzzle/Levers.tscn" id="2_upfuo"]
+[ext_resource type="FontFile" uid="uid://d3lowxrvtp2b6" path="res://assets/fonts/TypewriterzDemoBold.ttf" id="5_aoe3i"]
+
+[node name="Levers_puzzle" type="Node2D" unique_id=510484368]
+script = ExtResource("1_aoe3i")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=557802617]
+offset_left = 6.1035156e-05
+offset_right = 1920.0
+offset_bottom = 1080.0
+mouse_filter = 2
+mouse_force_pass_scroll_events = false
+color = Color(0.23856601, 0.24031019, 0.227992, 1)
+
+[node name="SwitchBox" type="Sprite2D" parent="." unique_id=24025028]
+position = Vector2(944, 544.00006)
+scale = Vector2(1.3124999, 1.2666668)
+texture = ExtResource("1_7jjey")
+script = ExtResource("2_7kqb6")
+
+[node name="Lever_1" parent="SwitchBox" unique_id=1636931259 instance=ExtResource("2_upfuo")]
+position = Vector2(-616, -104)
+
+[node name="Lever_2" parent="SwitchBox" unique_id=672722130 instance=ExtResource("2_upfuo")]
+position = Vector2(-312, -104)
+
+[node name="Lever_3" parent="SwitchBox" unique_id=1893000738 instance=ExtResource("2_upfuo")]
+position = Vector2(-8, -104)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="Lever_4" parent="SwitchBox" unique_id=1351904579 instance=ExtResource("2_upfuo")]
+position = Vector2(296, -104)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1053561099]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=126951701]
+offset_right = 1920.0
+offset_bottom = 1080.0
+mouse_filter = 2
+color = Color(0, 0, 0, 0.47058824)
+
+[node name="PuzzleCompleteLabel" type="RichTextLabel" parent="CanvasLayer" unique_id=972280513]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -328.0
+offset_top = -92.0
+offset_right = 304.0
+offset_bottom = 116.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("5_aoe3i")
+theme_override_fonts/bold_italics_font = ExtResource("5_aoe3i")
+theme_override_font_sizes/normal_font_size = 100
+theme_override_font_sizes/bold_font_size = 20
+bbcode_enabled = true
+text = "[center][wave][rainbow]Completed Puzzle"

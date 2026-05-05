@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://8t7xwhnw30em"]
+
+[ext_resource type="Texture2D" uid="uid://dljpe8pf503vu" path="res://assets/Objects/lvl1/SwitchPuzzle/Switch-Down.png" id="1_5dqmj"]
+[ext_resource type="Script" uid="uid://dt1qgsdya5bqb" path="res://scripts/Level_1/SwitchPuzzle/levers.gd" id="1_ykx1h"]
+[ext_resource type="Texture2D" uid="uid://d2qpcgl0wsq1o" path="res://assets/Objects/lvl1/SwitchPuzzle/Switch-Up.png" id="2_luh6f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xa5o2"]
+size = Vector2(288, 485.25)
+
+[node name="Lever" type="Area2D" unique_id=1636931259]
+script = ExtResource("1_ykx1h")
+
+[node name="Lever_Down" type="Sprite2D" parent="." unique_id=1550580141]
+position = Vector2(152, 160.00002)
+scale = Vector2(0.6119999, 0.628)
+texture = ExtResource("1_5dqmj")
+
+[node name="Lever_Up" type="Sprite2D" parent="." unique_id=21813206]
+visible = false
+position = Vector2(152, -40)
+scale = Vector2(0.612, 0.628)
+texture = ExtResource("2_luh6f")
+
+[node name="Collision_lever" type="CollisionShape2D" parent="." unique_id=1689111250]
+position = Vector2(152, 66.625)
+shape = SubResource("RectangleShape2D_xa5o2")

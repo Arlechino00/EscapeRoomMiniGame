@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cqbxfh4x0g4"]
+
+[ext_resource type="Script" uid="uid://bx1qm6giw3fbi" path="res://scripts/Level_1/SwitchPuzzle/interact_puzzle.gd" id="1_i2rw3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6d40e"]
+size = Vector2(381, 446)
+
+[node name="SwitchPuzzleInter" type="Node2D" unique_id=904449519]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=725111554]
+script = ExtResource("1_i2rw3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=722767793]
+position = Vector2(200.5, 231)
+shape = SubResource("RectangleShape2D_6d40e")
+
+[node name="text" type="Label" parent="Area2D" unique_id=797683365]
+offset_left = 224.0
+offset_top = 216.0
+offset_right = 451.0
+offset_bottom = 252.0
+theme_override_font_sizes/font_size = 26
