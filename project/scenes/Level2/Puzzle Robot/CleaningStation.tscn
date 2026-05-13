@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://b1x4y508oak2w"]
+
+[ext_resource type="Script" uid="uid://cwxstd2rhppu8" path="res://scripts/Level_2/RobotPuzzle/CleaningStation/CleaningStation.gd" id="1_station"]
+[ext_resource type="Texture2D" uid="uid://dk4g6543k7uru" path="res://assets/Objects/lvl2/lvl 2 plant pc.png" id="2_station"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_station"]
+size = Vector2(486, 547)
+
+[node name="CleaningStation" type="Area2D" unique_id=1125675310]
+script = ExtResource("1_station")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1466868609]
+position = Vector2(1, 0)
+texture = ExtResource("2_station")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=145589324]
+position = Vector2(-22, -12.5)
+shape = SubResource("RectangleShape2D_station")
+
+[node name="text" type="Label" parent="." unique_id=346731618]
+offset_left = -80.0
+offset_top = -80.0
+offset_right = 300.0
+offset_bottom = -40.0
+theme_override_font_sizes/font_size = 26

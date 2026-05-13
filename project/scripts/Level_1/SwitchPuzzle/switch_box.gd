@@ -34,8 +34,7 @@ func _on_lever_changed() -> void:
 	if _check_solution():
 		puzzle_solved.emit()
 	else:
-		var level_id = get_tree().current_scene.name
-		Analytics.mistake_made("levers_puzzle", level_id, "wrong_combination")
+		Analytics.log_event("mistake_made", {"puzzle_id": "levers_puzzle", "reason": "wrong_combination"})
 
 func _check_solution() -> bool:
 	print("Levers count: ", levers.size(), " | Answers count: ", correct_answers.size())

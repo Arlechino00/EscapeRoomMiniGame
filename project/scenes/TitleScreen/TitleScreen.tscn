@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://bq3tivbirui54"]
 
-[ext_resource type="Script" uid="uid://bdmf4h0ei6y14" path="res://scripts/TitleScreen/TitleScreen.gd" id="1_nwylw"]
-[ext_resource type="Texture2D" uid="uid://djqafggaae86n" path="res://assets/Title_Screen/background.png" id="2_ucmnd"]
-[ext_resource type="FontFile" uid="uid://dxrgi8agoifsg" path="res://assets/fonts/TypewriterzDemoRegular.ttf" id="3_d07el"]
-[ext_resource type="FontFile" uid="uid://d3lowxrvtp2b6" path="res://assets/fonts/TypewriterzDemoBold.ttf" id="4_u37po"]
-[ext_resource type="FontFile" uid="uid://btg5gd6mgs14b" path="res://assets/fonts/TypewriterzDemoItalic.ttf" id="5_c6vk0"]
+[ext_resource type="Script" uid="uid://cjxm7p3nrb2q4" path="res://scripts/TitleScreen/TitleScreen.gd" id="1_nwylw"]
+[ext_resource type="Texture2D" uid="uid://cpm42sb4s08uj" path="res://assets/Title_Screen/title screen v2.png" id="2_nwylw"]
+[ext_resource type="FontFile" uid="uid://b88vmmbm50u2m" path="res://assets/fonts/Pixelify Sans/PixelifySans-Regular.ttf" id="3_ucmnd"]
+[ext_resource type="FontFile" uid="uid://d134ck72vnenn" path="res://assets/fonts/Pixelify Sans/PixelifySans-Bold.ttf" id="4_d07el"]
+[ext_resource type="FontFile" uid="uid://btg5gd6mgs14b" path="res://assets/fonts/TypeWriter/TypewriterzDemoItalic.ttf" id="5_c6vk0"]
+[ext_resource type="FontFile" uid="uid://cbyxod46lxmwj" path="res://assets/fonts/Pixelify Sans/PixelifySans-SemiBold.ttf" id="6_d07el"]
+[ext_resource type="AudioStream" uid="uid://dm7fsy0apemp0" path="res://assets/Audio/toasty - pixel beat feat 2026-04-19 10_19.mp3" id="7_d07el"]
 
 [node name="TitleScreen" type="Control" unique_id=1636605949]
 layout_mode = 3
@@ -12,24 +14,24 @@ anchors_preset = 0
 script = ExtResource("1_nwylw")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1898787047]
-position = Vector2(961.25, 541.5)
-scale = Vector2(6.0873017, 4.308)
-texture = ExtResource("2_ucmnd")
+position = Vector2(960.5074, 542.48)
+scale = Vector2(0.09370045, 0.09331946)
+texture = ExtResource("2_nwylw")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=193048830]
 layout_mode = 0
-offset_left = 462.0
-offset_top = 296.0
-offset_right = 1521.0
-offset_bottom = 480.0
+offset_left = 408.0
+offset_top = 120.0
+offset_right = 1562.0
+offset_bottom = 568.0
 theme_override_colors/font_outline_color = Color(0, 0, 0.8352941, 0.7647059)
 theme_override_constants/outline_size = 52
-theme_override_fonts/normal_font = ExtResource("3_d07el")
-theme_override_fonts/bold_font = ExtResource("4_u37po")
+theme_override_fonts/normal_font = ExtResource("3_ucmnd")
+theme_override_fonts/bold_font = ExtResource("4_d07el")
 theme_override_fonts/bold_italics_font = ExtResource("5_c6vk0")
 theme_override_font_sizes/normal_font_size = 133
 bbcode_enabled = true
-text = "[wave] Escape Room "
+text = "[wave] Re:Boot Circular Humans"
 tab_size = 6
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -44,20 +46,20 @@ theme_override_constants/separation = 55
 
 [node name="Start_Button" type="Button" parent="MainMenu" unique_id=129313096]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_d07el")
+theme_override_fonts/font = ExtResource("4_d07el")
 theme_override_font_sizes/font_size = 55
 text = "Start"
 
 [node name="Settings_Button" type="Button" parent="MainMenu" unique_id=1087857280]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_d07el")
+theme_override_fonts/font = ExtResource("4_d07el")
 theme_override_font_sizes/font_size = 55
 text = "Settings
 "
 
 [node name="Quit_Button" type="Button" parent="MainMenu" unique_id=914070884]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_d07el")
+theme_override_fonts/font = ExtResource("4_d07el")
 theme_override_font_sizes/font_size = 55
 text = "Quit
 "
@@ -73,21 +75,94 @@ theme_override_constants/separation = 55
 
 [node name="NewGame_Button" type="Button" parent="StarMenu" unique_id=1554113498]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_d07el")
+theme_override_fonts/font = ExtResource("4_d07el")
 theme_override_font_sizes/font_size = 55
 text = "New Game"
 
 [node name="LoadSave_Button" type="Button" parent="StarMenu" unique_id=1027118104]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_d07el")
+theme_override_fonts/font = ExtResource("4_d07el")
 theme_override_font_sizes/font_size = 55
 text = "Load Save File"
 
 [node name="Back_Button" type="Button" parent="StarMenu" unique_id=934133300]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_d07el")
+theme_override_fonts/font = ExtResource("4_d07el")
 theme_override_font_sizes/font_size = 55
 text = "Back"
+
+[node name="LoginPanel" type="VBoxContainer" parent="." unique_id=200000001]
+visible = false
+layout_mode = 0
+offset_left = 660.0
+offset_top = 440.0
+offset_right = 1260.0
+offset_bottom = 950.0
+theme_override_constants/separation = 20
+
+[node name="LoginTitle" type="Label" parent="LoginPanel" unique_id=200000002]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_d07el")
+theme_override_font_sizes/font_size = 50
+text = "Login / Register"
+horizontal_alignment = 1
+
+[node name="NicknameInput" type="LineEdit" parent="LoginPanel" unique_id=200000003]
+custom_minimum_size = Vector2(0, 65)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_ucmnd")
+theme_override_font_sizes/font_size = 36
+placeholder_text = "Nickname"
+
+[node name="PinInput" type="LineEdit" parent="LoginPanel" unique_id=200000004]
+custom_minimum_size = Vector2(0, 65)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_ucmnd")
+theme_override_font_sizes/font_size = 36
+placeholder_text = "PIN"
+secret = true
+
+[node name="ButtonRow" type="HBoxContainer" parent="LoginPanel" unique_id=200000005]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Login_Button" type="Button" parent="LoginPanel/ButtonRow" unique_id=200000006]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("4_d07el")
+theme_override_font_sizes/font_size = 45
+text = "Login"
+
+[node name="Register_Button" type="Button" parent="LoginPanel/ButtonRow" unique_id=200000007]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("4_d07el")
+theme_override_font_sizes/font_size = 45
+text = "Register"
+
+[node name="PlayLocally_Button" type="Button" parent="LoginPanel" unique_id=200000008]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_d07el")
+theme_override_font_sizes/font_size = 40
+text = "Play Locally"
+
+[node name="StatusLabel" type="Label" parent="LoginPanel" unique_id=200000009]
+custom_minimum_size = Vector2(0, 45)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_d07el")
+theme_override_font_sizes/font_size = 28
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="LoginBack_Button" type="Button" parent="LoginPanel" unique_id=200000010]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_d07el")
+theme_override_font_sizes/font_size = 40
+text = "Back"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1313520205]
+stream = ExtResource("7_d07el")
+autoplay = true
 
 [connection signal="pressed" from="MainMenu/Start_Button" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="MainMenu/Settings_Button" to="." method="_on_settings_button_pressed"]
@@ -95,3 +170,7 @@ text = "Back"
 [connection signal="pressed" from="StarMenu/NewGame_Button" to="." method="_on_new_game_button_pressed"]
 [connection signal="pressed" from="StarMenu/LoadSave_Button" to="." method="_on_load_save_button_pressed"]
 [connection signal="pressed" from="StarMenu/Back_Button" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="LoginPanel/ButtonRow/Login_Button" to="." method="_on_login_button_pressed"]
+[connection signal="pressed" from="LoginPanel/ButtonRow/Register_Button" to="." method="_on_register_button_pressed"]
+[connection signal="pressed" from="LoginPanel/PlayLocally_Button" to="." method="_on_play_locally_button_pressed"]
+[connection signal="pressed" from="LoginPanel/LoginBack_Button" to="." method="_on_login_back_button_pressed"]

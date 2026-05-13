@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cqbxfh4x0g4"]
 
 [ext_resource type="Script" uid="uid://bx1qm6giw3fbi" path="res://scripts/Level_1/SwitchPuzzle/interact_puzzle.gd" id="1_i2rw3"]
+[ext_resource type="FontFile" uid="uid://d134ck72vnenn" path="res://assets/fonts/Pixelify Sans/PixelifySans-Bold.ttf" id="2_qahbj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6d40e"]
 size = Vector2(381, 446)
@@ -19,4 +20,5 @@ offset_left = 224.0
 offset_top = 216.0
 offset_right = 451.0
 offset_bottom = 252.0
+theme_override_fonts/font = ExtResource("2_qahbj")
 theme_override_font_sizes/font_size = 26

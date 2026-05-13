@@ -23,11 +23,13 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+Auth="*uid://drm1xghm2rukt"
 GameStrings="*uid://5xsvakd6r2am"
 Inventory="*uid://dqbn0khm4bkyh"
 GameSave="*uid://dq2wax5mj6ttb"
 PuzzleProgress="*uid://dderaaj1uorwg"
 Analytics="*uid://cl18bc21mgcpb"
+SceneTransition="*uid://c45ybiig2tt0r"
 
 [display]
 

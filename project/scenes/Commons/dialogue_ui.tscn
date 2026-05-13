@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://clweboild6iyp"]
+
+[ext_resource type="Script" uid="uid://dsxvw3303fytm" path="res://scripts/UI/dialogue_ui.gd" id="1_u0hab"]
+[ext_resource type="FontFile" uid="uid://d134ck72vnenn" path="res://assets/fonts/Pixelify Sans/PixelifySans-Bold.ttf" id="3_ghwqe"]
+[ext_resource type="FontFile" uid="uid://b88vmmbm50u2m" path="res://assets/fonts/Pixelify Sans/PixelifySans-Regular.ttf" id="4_xsd1a"]
+
+[node name="DialogueUI" type="CanvasLayer" unique_id=26106533]
+script = ExtResource("1_u0hab")
+
+[node name="Panel" type="Panel" parent="." unique_id=1307871174]
+offset_right = 1922.0
+offset_bottom = 261.0
+
+[node name="PortraitRect" type="TextureRect" parent="Panel" unique_id=1667617445]
+layout_mode = 0
+offset_left = 66.0
+offset_top = 18.0
+offset_right = 210.0
+offset_bottom = 152.0
+expand_mode = 1
+
+[node name="DialogueLabel" type="RichTextLabel" parent="Panel" unique_id=1014878557]
+layout_mode = 0
+offset_left = 280.0
+offset_top = 24.0
+offset_right = 1760.0
+offset_bottom = 184.0
+theme_override_fonts/normal_font = ExtResource("3_ghwqe")
+theme_override_font_sizes/normal_font_size = 48
+
+[node name="NameLabel" type="Label" parent="Panel" unique_id=979916794]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 176.0
+offset_right = 251.0
+offset_bottom = 231.0
+theme_override_fonts/font = ExtResource("4_xsd1a")
+theme_override_font_sizes/font_size = 37
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ContinueLabel" type="Label" parent="Panel" unique_id=1118311284]
+layout_mode = 0
+offset_left = 1480.0
+offset_top = 184.0
+offset_right = 1905.0
+offset_bottom = 258.0
+theme_override_fonts/font = ExtResource("3_ghwqe")
+theme_override_font_sizes/font_size = 34
+text = "Press  Space to Continue"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ChoiceContainer" type="HBoxContainer" parent="Panel" unique_id=3221495701]
+visible = false
+layout_mode = 0
+offset_left = 590.0
+offset_top = 188.0
+offset_right = 1330.0
+offset_bottom = 256.0
+alignment = 1
+
+[node name="TrueButton" type="Button" parent="Panel/ChoiceContainer" unique_id=4012837651]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 32
+text = "True (A)"
+
+[node name="FalseButton" type="Button" parent="Panel/ChoiceContainer" unique_id=4012837652]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 32
+text = "False (F)"

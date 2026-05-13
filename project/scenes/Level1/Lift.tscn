@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://fjunc88e5xfk" path="res://scripts/Level_1/Lift_Level1_2.gd" id="1_xwqql"]
 [ext_resource type="Texture2D" uid="uid://c21vpktswhuwr" path="res://assets/Background(Rooms)/Commos/LiftOpen.png" id="2_dnxl0"]
+[ext_resource type="FontFile" uid="uid://d134ck72vnenn" path="res://assets/fonts/Pixelify Sans/PixelifySans-Bold.ttf" id="4_11hs6"]
 [ext_resource type="Texture2D" uid="uid://bv66rkgs372l5" path="res://assets/Background(Rooms)/Commos/LiftClosed.png" id="4_dnxl0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xwqql"]
@@ -36,4 +37,5 @@ offset_left = 444.0
 offset_top = -1298.0
 offset_right = 812.0
 offset_bottom = -1194.0
+theme_override_fonts/font = ExtResource("4_11hs6")
 theme_override_font_sizes/font_size = 36

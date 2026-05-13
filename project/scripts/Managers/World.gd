@@ -22,12 +22,16 @@ func _ready() -> void:
 		call_deferred("_restore_player_position")
 
 func _move_player_to_spawn() -> void:
+	if not is_inside_tree():
+		return
 	var player = get_tree().get_first_node_in_group("player")
 	if player:
 		player.global_position = spawn.global_position
 		print("Player spawned at: ", spawn.global_position)
 
 func _restore_player_position() -> void:
+	if not is_inside_tree():
+		return
 	var player = get_tree().get_first_node_in_group("player")
 	if not player:
 		return

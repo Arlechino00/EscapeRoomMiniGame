@@ -65,3 +65,15 @@ func get_spot(spot_id: String) -> Dictionary:
 
 func get_item(item_id: String) -> Dictionary:
 	return get_section("items").get(item_id, {})
+
+func get_story(key: String) -> Array:
+	return _data.get("story", {}).get(key, [])
+
+func get_dialogue(key: String) -> Array:
+	return _data.get("dialogue", {}).get(key, [])
+
+func get_book_pages() -> Array:
+	return _data.get("book", {}).get("pages", [])
+
+func get_book_title() -> String:
+	return _data.get("book", {}).get("title", "Theory Book")

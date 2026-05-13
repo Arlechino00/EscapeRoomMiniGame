@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://d3x7y508n1k4r"]
+
+[ext_resource type="Script" uid="uid://n026ha5ips2m" path="res://scripts/Level_2/RobotPuzzle/Objects/Sponge.gd" id="1_lksp4"]
+[ext_resource type="Texture2D" uid="uid://2ju7w8iks2tk" path="res://assets/Objects/lvl2/puzzle_1/Sponge.png" id="2_lksp4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sponge"]
+radius = 62.361847
+
+[node name="Sponge" type="Node2D" unique_id=1577580957]
+
+[node name="PickableItem" type="Area2D" parent="." unique_id=1472627801]
+script = ExtResource("1_lksp4")
+
+[node name="Sprite2D" type="Sprite2D" parent="PickableItem" unique_id=1340901343]
+modulate = Color(1, 1, 0, 1)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_lksp4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickableItem" unique_id=442927817]
+shape = SubResource("CircleShape2D_sponge")
+
+[node name="text" type="Label" parent="PickableItem" unique_id=1838400548]
+offset_left = -49.0
+offset_top = -84.0
+offset_right = 205.0
+offset_bottom = -44.0
+theme_override_font_sizes/font_size = 18
+text = "Press E — pick up the Sponge"

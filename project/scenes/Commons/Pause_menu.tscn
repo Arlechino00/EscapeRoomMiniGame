@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://cv30bevscsoom"]
 
 [ext_resource type="Script" uid="uid://drak4rw0tvlv7" path="res://scripts/UI/pause_menu.gd" id="1_lddbi"]
-[ext_resource type="FontFile" uid="uid://d3lowxrvtp2b6" path="res://assets/fonts/TypewriterzDemoBold.ttf" id="1_myx47"]
-[ext_resource type="FontFile" uid="uid://dxrgi8agoifsg" path="res://assets/fonts/TypewriterzDemoRegular.ttf" id="2_kukqi"]
+[ext_resource type="FontFile" uid="uid://d3lowxrvtp2b6" path="res://assets/fonts/TypeWriter/TypewriterzDemoBold.ttf" id="1_myx47"]
+[ext_resource type="FontFile" uid="uid://dxrgi8agoifsg" path="res://assets/fonts/TypeWriter/TypewriterzDemoRegular.ttf" id="2_kukqi"]
 
 [node name="PauseMenu" type="Control" unique_id=2111899174]
 process_mode = 3
@@ -53,6 +53,18 @@ theme_override_fonts/font = ExtResource("2_kukqi")
 theme_override_font_sizes/font_size = 55
 text = "Quit to menu"
 icon_alignment = 1
+
+[node name="SaveMessage" type="Label" parent="Background" unique_id=300000001]
+layout_mode = 0
+offset_left = 560.0
+offset_top = 530.0
+offset_right = 1360.0
+offset_bottom = 610.0
+theme_override_font_sizes/font_size = 36
+text = ""
+horizontal_alignment = 1
+vertical_alignment = 1
+visible = false
 
 [connection signal="pressed" from="Background/VBoxContainer/Save" to="." method="_on_save_pressed"]
 [connection signal="pressed" from="Background/VBoxContainer/Quit_to_menu" to="." method="_on_quit_to_menu_pressed"]

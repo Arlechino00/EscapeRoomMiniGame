@@ -2,7 +2,8 @@
 
 [ext_resource type="Script" uid="uid://ilke1j8tgkca" path="res://scripts/Level_1/CablePuzzle/PipePuzzle.gd" id="1_u70ef"]
 [ext_resource type="Texture2D" uid="uid://cygjhthrfnhc" path="res://assets/Objects/lvl1/PipePuzzle/pipe puzzle pc only.png" id="2_nlfh6"]
-[ext_resource type="FontFile" uid="uid://d3lowxrvtp2b6" path="res://assets/fonts/TypewriterzDemoBold.ttf" id="3_av2yx"]
+[ext_resource type="FontFile" uid="uid://d134ck72vnenn" path="res://assets/fonts/Pixelify Sans/PixelifySans-Bold.ttf" id="3_mqeky"]
+[ext_resource type="FontFile" uid="uid://b88vmmbm50u2m" path="res://assets/fonts/Pixelify Sans/PixelifySans-Regular.ttf" id="4_80h0o"]
 
 [node name="PipePuzzle" type="Control" unique_id=434758499]
 layout_mode = 3
@@ -58,6 +59,7 @@ text = "✕"
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("3_mqeky")
 text = "Fix the Pipes"
 
 [node name="GridContainer" type="GridContainer" parent="Background" unique_id=158486188]
@@ -80,6 +82,7 @@ columns = 3
 layout_mode = 0
 offset_right = 8.0
 offset_bottom = 8.0
+theme_override_fonts/font = ExtResource("3_mqeky")
 text = "Check Solution"
 
 [node name="AlreadyLabel" type="Label" parent="Background" unique_id=920344280]
@@ -87,6 +90,7 @@ visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("3_mqeky")
 text = "✓ Already fixed!"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1241720878]
@@ -104,14 +108,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -328.0
-offset_top = -92.0
-offset_right = 304.0
-offset_bottom = 116.0
+offset_left = -510.0
+offset_top = -89.0
+offset_right = 511.0
+offset_bottom = 60.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/normal_font = ExtResource("3_av2yx")
-theme_override_fonts/bold_italics_font = ExtResource("3_av2yx")
+theme_override_fonts/normal_font = ExtResource("4_80h0o")
+theme_override_fonts/bold_italics_font = ExtResource("3_mqeky")
 theme_override_font_sizes/normal_font_size = 100
 theme_override_font_sizes/bold_font_size = 20
 bbcode_enabled = true

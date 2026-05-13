@@ -14,7 +14,7 @@ var _picked : bool = false
 
 
 func _ready() -> void:
-	# Auto-set item_name from sprite texture filename if still default
+	
 	if item_name == "Item":
 		var sprite = get_node_or_null("Sprite2D")
 		if sprite and sprite.texture:
@@ -28,12 +28,17 @@ func _ready() -> void:
 		set_process(true)
 	else:
 		set_process(false)
-		
-	body_entered.connect(_on_body_entered)
-	body_exited.connect(_on_body_exited)
+	
+	var puzzles = GameSave.get_game_data().get("puzzles", {})
+	if puzzles.get("pipe_puzzle", false):
+		body_entered.connect(_on_body_entered)
+		body_exited.connect(_on_body_exited)
+		show()
+	else: 
+		hide()
 
 	# FINAL CHECK: If we already have this item, disappear immediately
-	if Inventory.has_item(item_name):
+	if GameSave.is_item_picked(item_name) or Inventory.has_item(item_name):
 		_picked = true
 		visible = false
 		$CollisionShape2D.set_deferred("disabled", true)
@@ -63,6 +68,7 @@ func interact() -> void:
 		"color": item_color,
 		"icon":  icon,
 	})
+	GameSave.mark_item_as_picked(item_name)
 	text.hide()
 	visible = false
 	$CollisionShape2D.set_deferred("disabled", true)

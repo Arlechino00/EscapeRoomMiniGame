@@ -4,7 +4,9 @@
 [ext_resource type="Script" uid="uid://bofv4b7c8sni1" path="res://scripts/Level_1/SwitchPuzzle/levers_puzzle.gd" id="1_aoe3i"]
 [ext_resource type="Script" uid="uid://qx3dxb802of" path="res://scripts/Level_1/SwitchPuzzle/switch_box.gd" id="2_7kqb6"]
 [ext_resource type="PackedScene" uid="uid://8t7xwhnw30em" path="res://scenes/Level1/puzzles/SwitchPuzzle/Levers.tscn" id="2_upfuo"]
-[ext_resource type="FontFile" uid="uid://d3lowxrvtp2b6" path="res://assets/fonts/TypewriterzDemoBold.ttf" id="5_aoe3i"]
+[ext_resource type="FontFile" uid="uid://d134ck72vnenn" path="res://assets/fonts/Pixelify Sans/PixelifySans-Bold.ttf" id="5_deelm"]
+[ext_resource type="FontFile" uid="uid://b88vmmbm50u2m" path="res://assets/fonts/Pixelify Sans/PixelifySans-Regular.ttf" id="6_klyio"]
+[ext_resource type="PackedScene" uid="uid://gg83fr4jpppe" path="res://scenes/Level1/puzzles/SwitchPuzzle/ReadingUI.tscn" id="7_deelm"]
 
 [node name="Levers_puzzle" type="Node2D" unique_id=510484368]
 script = ExtResource("1_aoe3i")
@@ -37,9 +39,9 @@ scale = Vector2(0.99999994, 0.99999994)
 position = Vector2(296, -104)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1053561099]
-visible = false
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=126951701]
+visible = false
 offset_right = 1920.0
 offset_bottom = 1080.0
 mouse_filter = 2
@@ -51,15 +53,48 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -328.0
+offset_left = -520.0
 offset_top = -92.0
-offset_right = 304.0
+offset_right = 432.0
 offset_bottom = 116.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/normal_font = ExtResource("5_aoe3i")
-theme_override_fonts/bold_italics_font = ExtResource("5_aoe3i")
+theme_override_fonts/normal_font = ExtResource("5_deelm")
+theme_override_fonts/bold_italics_font = ExtResource("6_klyio")
 theme_override_font_sizes/normal_font_size = 100
 theme_override_font_sizes/bold_font_size = 20
 bbcode_enabled = true
-text = "[center][wave][rainbow]Completed Puzzle"
+
+[node name="Back" type="Button" parent="CanvasLayer" unique_id=1307638071]
+offset_left = 1652.0
+offset_top = 31.0
+offset_right = 1904.0
+offset_bottom = 164.0
+theme_override_fonts/font = ExtResource("6_klyio")
+theme_override_font_sizes/font_size = 100
+text = "Back"
+
+[node name="Hint" type="Button" parent="CanvasLayer" unique_id=2119486501]
+offset_left = 1648.0
+offset_top = 184.0
+offset_right = 1900.0
+offset_bottom = 317.0
+theme_override_fonts/font = ExtResource("6_klyio")
+theme_override_font_sizes/font_size = 100
+text = "Hint"
+
+[node name="Check" type="Button" parent="CanvasLayer" unique_id=427423781]
+offset_left = 784.0
+offset_top = 832.0
+offset_right = 1066.0
+offset_bottom = 961.0
+theme_override_fonts/font = ExtResource("6_klyio")
+theme_override_font_sizes/font_size = 100
+text = "Check"
+
+[node name="ReadingUI" parent="." unique_id=1531459707 instance=ExtResource("7_deelm")]
+visible = false
+
+[connection signal="pressed" from="CanvasLayer/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="CanvasLayer/Hint" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="CanvasLayer/Check" to="." method="_on_check_pressed"]

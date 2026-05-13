@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://b8v6k3l7nap2w"]
+
+[ext_resource type="Script" uid="uid://m8upja014ns8" path="res://scripts/Level_2/RobotPuzzle/Objects/Hammer.gd" id="1_hammer"]
+[ext_resource type="Texture2D" uid="uid://4ejxqy8k78mr" path="res://assets/Objects/lvl2/puzzle_1/hammer.png" id="2_nonv2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4y27e"]
+radius = 147.411
+
+[node name="Hammer" type="Node2D" unique_id=961043091]
+scale = Vector2(0.6, 0.6)
+
+[node name="PickableItem" type="Area2D" parent="." unique_id=2112613079]
+position = Vector2(-1, -9)
+script = ExtResource("1_hammer")
+
+[node name="Sprite2D" type="Sprite2D" parent="PickableItem" unique_id=875623564]
+position = Vector2(4.999996, 5)
+scale = Vector2(0.2631295, 0.2626953)
+texture = ExtResource("2_nonv2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickableItem" unique_id=1274589860]
+position = Vector2(-4, 4)
+shape = SubResource("CircleShape2D_4y27e")
+
+[node name="text" type="Label" parent="PickableItem" unique_id=762512026]
+offset_left = -200.0
+offset_top = -200.0
+offset_right = 200.0
+offset_bottom = -140.0
+theme_override_font_sizes/font_size = 32
+text = "Press E — pick up Hammer"
+horizontal_alignment = 1
+vertical_alignment = 1

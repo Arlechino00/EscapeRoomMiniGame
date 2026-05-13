@@ -29,9 +29,10 @@ func initiate_full_save() -> void:
 			items_to_save.append(item_copy)
 			
 		d["inventory"] = items_to_save
-		
-		
-		
+
+		if not d.has("picked_items"):
+			d["picked_items"] = []
+
 		game_data = d
 		save_game()
 		print("[SAVE] Succes!")
@@ -41,24 +42,60 @@ func initiate_full_save() -> void:
 	print("--- SAVE FINISHED ---")
 
 	
+func mark_item_as_picked(item_id: String) -> void:
+	var d = game_data
+	var picked = d.get("picked_items", [])
+	if not item_id in picked:
+		picked.append(item_id)
+		d["picked_items"] = picked
+		game_data = d
+		print("[SAVE] Item marked as picked: ", item_id)
+
+func is_item_picked(item_id: String) -> bool:
+	return item_id in game_data.get("picked_items", [])
+
 func load_game_and_apply() -> void:
 	load_game()
-	
+
 	if game_data.is_empty():
 		print("[LOAD] EROARE: Nu am găsit fișierul de salvare!")
 		return
+
+	# Restore inventory BEFORE the scene change so _ready() on items sees it
+	var loaded_items = game_data.get("inventory", [])
+	var fixed_items = []
+
+	for item_data in loaded_items:
+		var item_copy = item_data.duplicate()
+		if item_copy.has("icon") and item_copy["icon"] is String:
+			var path: String = item_copy["icon"]
+			if ":<" in path:
+				path = path.split(":<")[0]
+			if path.begins_with("res:/") and not path.begins_with("res://"):
+				path = "res://" + path.substr(6)
+			if FileAccess.file_exists(path):
+				item_copy["icon"] = load(path)
+			else:
+				print("[LOAD] icon not found: ", path)
+		fixed_items.append(item_copy)
+
+	Inventory.clear()
+	for item in fixed_items:
+		Inventory.add_item(item)
+	Inventory.inventory_changed.emit()
+	print("[LOAD] Inventory restored.")
 
 	var saved_scene = game_data.get("level_name", "")
 	if saved_scene != "" and saved_scene != get_tree().current_scene.scene_file_path:
 		print("[LOAD] Schimb scena către: ", saved_scene)
 		get_tree().change_scene_to_file(saved_scene)
-		await get_tree().node_added 
+		await get_tree().node_added
 		await get_tree().process_frame
 		await get_tree().process_frame
 
 	var nodes = get_tree().get_nodes_in_group("player")
 	var p = null
-	
+
 	for node in nodes:
 		if node is CharacterBody2D:
 			p = node
@@ -69,24 +106,3 @@ func load_game_and_apply() -> void:
 		var pos_y = game_data.get("player_y", p.global_position.y)
 		p.global_position = Vector2(pos_x, pos_y)
 		print("[LOAD] Succes! Player teleportat la: ", p.global_position)
-		
-		var loaded_items = game_data.get("inventory", [])
-		var fixed_items = []
-		
-		for item_data in loaded_items:
-			var item_copy = item_data.duplicate()
-			if item_copy.has("icon") and item_copy["icon"] is String:
-				var path: String = item_copy["icon"]
-				if ":<" in path:
-					path = path.split(":<")[0] 
-				if path.begins_with("res:/") and not path.begins_with("res://"):
-					path = "res://" + path.substr(6)
-				if FileAccess.file_exists(path):
-					item_copy["icon"] = load(path)
-				else:
-					print("[LOAD] icon not found: ", path)
-			fixed_items.append(item_copy)
-		Inventory.clear()
-		for item in fixed_items:
-			Inventory.add_item(item)
-		Inventory.inventory_changed.emit()

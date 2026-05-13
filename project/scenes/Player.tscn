@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://cf7v012cceicv" path="res://scripts/Managers/Player.gd" id="1_p0vlq"]
 [ext_resource type="Texture2D" uid="uid://iq4rm3ltskic" path="res://icon.svg" id="2_v6fml"]
-[ext_resource type="Texture2D" uid="uid://73b5gkxfjvf8" path="res://assets/Characters/PNG-Spritesheet-Semi-Final.png" id="3_mdl7e"]
-[ext_resource type="Texture2D" uid="uid://dt72rfjm8xl22" path="res://assets/Characters/Spritesheet roboPNG.png" id="4_qu4a1"]
+[ext_resource type="Texture2D" uid="uid://73b5gkxfjvf8" path="res://assets/Characters/main_character/PNG-Spritesheet-Semi-Final.png" id="3_mdl7e"]
+[ext_resource type="Texture2D" uid="uid://dt72rfjm8xl22" path="res://assets/Characters/main_character/Spritesheet roboPNG.png" id="4_qu4a1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v6fml"]
 radius = 18.0

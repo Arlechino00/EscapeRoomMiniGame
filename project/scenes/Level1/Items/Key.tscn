@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://cdvnuwaxxnfs5"]
 
 [ext_resource type="Script" uid="uid://dh2kb57f3jcd2" path="res://scripts/Level_1/KeyCard.gd" id="1_4y27e"]
-[ext_resource type="Texture2D" uid="uid://q82kislj4qt0" path="res://assets/Test/key.png" id="2_ns47n"]
+[ext_resource type="Texture2D" uid="uid://c4x78t71kwel5" path="res://assets/Objects/Keycard.png" id="2_64kpe"]
+[ext_resource type="FontFile" uid="uid://d134ck72vnenn" path="res://assets/fonts/Pixelify Sans/PixelifySans-Bold.ttf" id="3_h38t4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4y27e"]
 radius = 67.7422
@@ -14,12 +15,12 @@ script = ExtResource("1_4y27e")
 requires_puzzles = true
 
 [node name="Sprite2D" type="Sprite2D" parent="PickableItem" unique_id=2116120728]
-position = Vector2(947, 495)
-scale = Vector2(0.136024, 0.12)
-texture = ExtResource("2_ns47n")
+position = Vector2(946, 504.99997)
+scale = Vector2(0.71428597, 0.6250002)
+texture = ExtResource("2_64kpe")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PickableItem" unique_id=1975777646]
-position = Vector2(953, 489)
+position = Vector2(949, 507)
 shape = SubResource("CircleShape2D_4y27e")
 
 [node name="text" type="Label" parent="PickableItem" unique_id=1763662396]
@@ -27,4 +28,5 @@ offset_left = 777.0
 offset_top = 416.0
 offset_right = 945.0
 offset_bottom = 474.0
+theme_override_fonts/font = ExtResource("3_h38t4")
 theme_override_font_sizes/font_size = 26

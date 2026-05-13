@@ -1,7 +1,7 @@
 extends Area2D
 
 @export var spot_id: String = "door"
-@export var requires_item: String = "Key"
+@export var requires_item: String = "Keycard"
 @export var target_scene: String = "res://scenes/Level2/Level2.tscn"
 
 @onready var sprite_closed: Sprite2D = $SpriteClosed

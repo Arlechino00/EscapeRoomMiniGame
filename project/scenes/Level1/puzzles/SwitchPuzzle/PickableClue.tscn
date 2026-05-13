@@ -2,9 +2,10 @@
 
 [ext_resource type="Script" uid="uid://dfipqcjsgthw1" path="res://scripts/Level_1/SwitchPuzzle/PickableClue.gd" id="1_14abj"]
 [ext_resource type="Texture2D" uid="uid://cw2x8hj7phpd2" path="res://assets/Objects/lvl1/pagina 300x200.png" id="2_gdeff"]
+[ext_resource type="FontFile" uid="uid://d134ck72vnenn" path="res://assets/fonts/Pixelify Sans/PixelifySans-Bold.ttf" id="3_gdeff"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vdl64"]
-size = Vector2(168, 226)
+size = Vector2(72, 101)
 
 [node name="PickableClue" type="Node2D" unique_id=1451854495]
 
@@ -14,16 +15,18 @@ item_name = "puzzle_paper"
 item_icon = ExtResource("2_gdeff")
 
 [node name="Paper" type="Sprite2D" parent="Node2D" unique_id=104428455]
-position = Vector2(108.00012, 113)
-scale = Vector2(0.01781251, 0.019166673)
+position = Vector2(36.00001, 50)
+scale = Vector2(0.0084374845, 0.00822917)
 texture = ExtResource("2_gdeff")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D" unique_id=414634160]
-position = Vector2(116, 119)
+position = Vector2(36, 52)
 shape = SubResource("RectangleShape2D_vdl64")
 
 [node name="text" type="Label" parent="Node2D" unique_id=604481699]
-offset_left = -28.0
-offset_top = -12.0
-offset_right = 157.0
-offset_bottom = 54.0
+offset_left = 27.0
+offset_top = -25.0
+offset_right = 193.0
+offset_bottom = 35.0
+theme_override_fonts/font = ExtResource("3_gdeff")
+theme_override_font_sizes/font_size = 30

@@ -1,12 +1,11 @@
 [gd_scene format=3 uid="uid://bt8hdqt844jwr"]
 
-[ext_resource type="Script" uid="uid://wfnegyw8lwh5" path="res://scripts/Managers/World.gd" id="1_x1okc"]
+[ext_resource type="Script" uid="uid://c1uismusglo1m" path="res://scripts/Level_1/level_1.gd" id="1_o5fci"]
 [ext_resource type="Texture2D" uid="uid://dkmyw7na6leqp" path="res://assets/Background(Rooms)/lvl 1 - introducere/level 1 big floor checkered.png" id="2_kb74u"]
 [ext_resource type="Texture2D" uid="uid://bryi55k4yjjpp" path="res://assets/Background(Rooms)/lvl 1 - introducere/Wall.png" id="3_x1okc"]
 [ext_resource type="Texture2D" uid="uid://biqyswvil0243" path="res://assets/Background(Rooms)/lvl 1 - introducere/locker.png" id="4_ect7k"]
 [ext_resource type="PackedScene" uid="uid://b2aolcvtf8msm" path="res://scenes/Level1/Lift.tscn" id="4_v5koy"]
 [ext_resource type="PackedScene" uid="uid://cdvnuwaxxnfs5" path="res://scenes/Level1/Items/Key.tscn" id="5_7ibbf"]
-[ext_resource type="PackedScene" uid="uid://dotf55xempmnx" path="res://scenes/Level1/Items/Potion.tscn" id="6_neye0"]
 [ext_resource type="PackedScene" uid="uid://jmis2b40fcu4" path="res://scenes/Player.tscn" id="7_xqmow"]
 [ext_resource type="Script" uid="uid://67myj7hk605y" path="res://scripts/UI/InventoryUI.gd" id="8_o5fci"]
 [ext_resource type="PackedScene" uid="uid://cv30bevscsoom" path="res://scenes/Commons/Pause_menu.tscn" id="9_2uc1i"]
@@ -16,6 +15,9 @@
 [ext_resource type="Texture2D" uid="uid://c4j6f2krfx1rq" path="res://assets/Background(Rooms)/lvl 1 - introducere/courtain.png" id="11_v5koy"]
 [ext_resource type="PackedScene" uid="uid://kvvh34e4r1sc" path="res://scenes/Level1/puzzles/PipePuzzle/PipePuzzleInter.tscn" id="12_2uc1i"]
 [ext_resource type="PackedScene" uid="uid://gg83fr4jpppe" path="res://scenes/Level1/puzzles/SwitchPuzzle/ReadingUI.tscn" id="12_7ibbf"]
+[ext_resource type="Script" uid="uid://ckdtvyuwseslx" path="res://scripts/Level_1/Dark.gd" id="17_2uc1i"]
+[ext_resource type="PackedScene" uid="uid://clweboild6iyp" path="res://scenes/Commons/dialogue_ui.tscn" id="17_ewj61"]
+[ext_resource type="PackedScene" uid="uid://cgqk0ed8hlm5y" path="res://scenes/Commons/book_ui.tscn" id="18_ewj61"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x1okc"]
 size = Vector2(32.28125, 1647)
@@ -27,7 +29,7 @@ size = Vector2(48.99994, 2779)
 size = Vector2(35.75, 2879.5)
 
 [node name="Level1" type="Node2D" unique_id=1195723123]
-script = ExtResource("1_x1okc")
+script = ExtResource("1_o5fci")
 
 [node name="Background" type="Node2D" parent="." unique_id=781831434]
 
@@ -74,12 +76,9 @@ position = Vector2(1211, 396)
 [node name="Key" parent="Interactions/Items" unique_id=179543878 instance=ExtResource("5_7ibbf")]
 position = Vector2(-127, -195)
 
-[node name="Potion" parent="Interactions/Items" unique_id=1929507644 instance=ExtResource("6_neye0")]
-position = Vector2(-44, 254)
-
 [node name="Puzzles" type="Node2D" parent="Interactions" unique_id=235710587]
 
-[node name="interaction_puzzle3" parent="Interactions/Puzzles" unique_id=904449519 instance=ExtResource("11_o5fci")]
+[node name="leversPuzzleInter" parent="Interactions/Puzzles" unique_id=904449519 instance=ExtResource("11_o5fci")]
 position = Vector2(306, -215)
 
 [node name="PipePuzzleInter" parent="Interactions/Puzzles" unique_id=2126017899 instance=ExtResource("12_2uc1i")]
@@ -97,6 +96,15 @@ position = Vector2(915, 703)
 position = Vector2(944, 597)
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=132650828]
+
+[node name="DarkLighting" type="ColorRect" parent="UI" unique_id=2086897334]
+visible = false
+offset_left = -216.0
+offset_top = -304.0
+offset_right = 4109.0
+offset_bottom = 1583.0
+color = Color(0.06666667, 0.06666667, 0.06666667, 0.6862745)
+script = ExtResource("17_2uc1i")
 
 [node name="ReadingUI" parent="UI" unique_id=1531459707 instance=ExtResource("12_7ibbf")]
 visible = false
@@ -137,6 +145,11 @@ layout_mode = 2
 [node name="CloseButton" type="Button" parent="UI/InventoryUI/Panel/VBoxContainer" unique_id=998944648]
 layout_mode = 2
 
+[node name="DialogueUI" parent="UI" unique_id=26106533 instance=ExtResource("17_ewj61")]
+
+[node name="BookUI" parent="UI" unique_id=1875310585 instance=ExtResource("18_ewj61")]
+visible = false
+
 [node name="PauseMenu" parent="UI" unique_id=2111899174 instance=ExtResource("9_2uc1i")]
 visible = false
 
@@ -168,3 +181,5 @@ shape = SubResource("RectangleShape2D_ect7k")
 position = Vector2(1372.75, 117.875)
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_kb74u")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2062283323]

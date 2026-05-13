@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://btablearmpu01"]
+
+[ext_resource type="Script" uid="uid://dubh6t18xj4v" path="res://scripts/Level_2/RobotPuzzle/CleaningStation/Table.gd" id="1_t"]
+[ext_resource type="Texture2D" uid="uid://dl0q3sxp4paxh" path="res://assets/Objects/lvl2/puzzle_1/table.png" id="2_t"]
+[ext_resource type="Texture2D" uid="uid://wka6uo45yntr" path="res://assets/Objects/lvl2/puzzle_1/arms/Broken_arm_state_1.png" id="3_t"]
+[ext_resource type="Texture2D" uid="uid://2ju7w8iks2tk" path="res://assets/Objects/lvl2/puzzle_1/Sponge.png" id="4_s"]
+[ext_resource type="Texture2D" uid="uid://4ejxqy8k78mr" path="res://assets/Objects/lvl2/puzzle_1/hammer.png" id="5_h"]
+[ext_resource type="Script" path="res://scripts/Level_2/RobotPuzzle/CleaningStation/DropZone.gd" id="6_dz"]
+[ext_resource type="Script" path="res://scripts/Level_2/RobotPuzzle/CleaningStation/DraggableTool.gd" id="7_dt"]
+
+[node name="Table" type="Node2D"]
+script = ExtResource("1_t")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Background" type="TextureRect" parent="UI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_t")
+expand_mode = 1
+
+[node name="ExitButton" type="Button" parent="UI"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -80.0
+offset_bottom = 80.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 40
+text = "X"
+flat = true
+
+[node name="StatusLabel" type="Label" parent="UI"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -100.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 32
+text = "Drag tools onto the arm to repair it."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Tools" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 300.0
+grow_horizontal = 2
+
+[node name="Sponge" type="TextureRect" parent="UI/Tools"]
+layout_mode = 1
+offset_left = 100.0
+offset_top = 50.0
+offset_right = 350.0
+offset_bottom = 300.0
+texture = ExtResource("4_s")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("7_dt")
+
+[node name="Hammer" type="TextureRect" parent="UI/Tools"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -350.0
+offset_top = 50.0
+offset_right = -100.0
+offset_bottom = 300.0
+grow_horizontal = 0
+texture = ExtResource("5_h")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("7_dt")
+
+[node name="ArmContainer" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -400.0
+offset_top = -550.0
+offset_right = 400.0
+offset_bottom = -150.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ArmSprite" type="TextureRect" parent="UI/ArmContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_t")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("6_dz")

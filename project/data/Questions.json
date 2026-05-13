@@ -5,22 +5,22 @@
 			"statements":[
 				{
 					"id":1,
-					"text":"a model of production and consumption that involves sharing, leasing, reusing, repairing, refurbishing, and recycling existing materials and products as long as possible. In this way, the life cycle of products is extended.",
+					"text":"a model of production and consumption that involves sharing, leasing, reusing, repairing, refurbishing, and recycling existing materials and products as long as possible. In this way, the life cycle of products is extended.[A/F]",
 					"is_true":true
 				},
 				{
 					"id":2,
-					"text":"an industrial economy that is restorative or regenerative by value and design.",
+					"text":"an industrial economy that is restorative or regenerative by value and design.[A/F]",
 					"is_true":true
 				},
 				{
 					"id":3,
-					"text":"an economic system that targets zero waste and pollution throughout materials lifecycles, from environment extraction to industrial transformation, and final consumers, applying to all involved ecosystems. Upon its lifetime end, materials return to either an industrial process or, in the case of a treated organic residual, safely back to the environment as in a natural regenerating cycle.",
+					"text":"an economic system that targets zero waste and pollution throughout materials lifecycles, from environment extraction to industrial transformation, and final consumers, applying to all involved ecosystems. Upon its lifetime end, materials return to either an industrial process or, in the case of a treated organic residual, safely back to the environment as in a natural regenerating cycle.[A/F]",
 					"is_true":true
 				},
 				{
 					"id":4,
-					"text":"an economic system in which the natural resources are turned into products that are ultimately destined to become waste.",
+					"text":"an economic system in which the natural resources are turned into products that are ultimately destined to become waste.[A/F]",
 					"is_true":false
 				}
 			]
@@ -30,22 +30,22 @@
 			"statements":[
 				{
 					"id":1,
-					"text":"only for the following SDGs:  Sustainable cities and communities  (SDG 11)  and Responsible consumption and production (SDG  12)",
+					"text":"only for the following SDGs:  Sustainable cities and communities  (SDG 11)  and Responsible consumption and production (SDG  12) [A/F]",
 					"is_true":false
 				},
 				{
 					"id":2,
-					"text":"only for the following SDGs:  Decent work and economic growth (SDG 8) and Industry, innovation, and infrastructure (SDG9)",
+					"text":"only for the following SDGs:  Decent work and economic growth (SDG 8) and Industry, innovation, and infrastructure (SDG9) [A/F]",
 					"is_true":false
 				},
 				{
 					"id":3,
-					"text":"only for three SDGs: Affordable and clean energy (SDG 7), Sustainable cities and communities  (SDG 11), and Climate action (SDG 13)",
+					"text":"only for three SDGs: Affordable and clean energy (SDG 7), Sustainable cities and communities  (SDG 11), and Climate action (SDG 13)[A/F]",
 					"is_true":false
 				},
 				{
 					"id":4,
-					"text":"for the following SDGs without  limiting: Affordable and clean energy (SDG 7), Decent work and economic growth (SDG 8), Industry, innovation and infrastructure (SDG9), Sustainable cities and communities  (SDG11), Responsible consumption and production (SDG 12) and Climate action (SDG 13)",
+					"text":"for the following SDGs without  limiting: Affordable and clean energy (SDG 7), Decent work and economic growth (SDG 8), Industry, innovation and infrastructure (SDG9), Sustainable cities and communities  (SDG11), Responsible consumption and production (SDG 12) and Climate action (SDG 13)[A/F]",
 					"is_true":true
 				}
 			]
@@ -55,22 +55,22 @@
 			"statements":[
 				{
 					"id":1,
-					"text":"the application of the Circular Economy concept to biological resources, products and materials.",
+					"text":"the application of the Circular Economy concept to biological resources, products and materials.[A/F]",
 					"is_true":true
 				},
 				{
 					"id":2,
-					"text":"a part of Circular Economy.",
+					"text":"a part of Circular Economy.[A/F]",
 					"is_true":true
 				},
 				{
 					"id":3,
-					"text":"more than Bioeconomy and Circular economy alone.",
+					"text":"more than Bioeconomy and Circular economy alone.[A/F]",
 					"is_true":true
 				},
 				{
 					"id":4,
-					"text":"circular economy without Bioeconomy",
+					"text":"circular economy without Bioeconomy[A/F]",
 					"is_true":false
 				}
 			]

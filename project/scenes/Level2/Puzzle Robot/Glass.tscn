@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://bl60q5fhkm7gu"]
+
+[ext_resource type="Script" uid="uid://b301h32pw3s12" path="res://scripts/Level_2/RobotPuzzle/Glass.gd" id="1_glass"]
+[ext_resource type="Texture2D" uid="uid://j3xuj4hvvywp" path="res://assets/Objects/lvl2/puzzle_1/glass_fixed.png" id="2_glass"]
+[ext_resource type="Texture2D" uid="uid://hkg5jwpkgfft" path="res://assets/Objects/lvl2/puzzle_1/glass_broken.png" id="3_glass"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_glass"]
+size = Vector2(407, 496.5)
+
+[node name="Glass" type="Area2D" unique_id=1836746613]
+script = ExtResource("1_glass")
+
+[node name="GlassFixed" type="Sprite2D" parent="." unique_id=1438636574]
+scale = Vector2(0.3558036, 0.30875)
+texture = ExtResource("2_glass")
+
+[node name="GlassBroken" type="Sprite2D" parent="." unique_id=653180053]
+visible = false
+scale = Vector2(0.35535705, 0.30875)
+texture = ExtResource("3_glass")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1236143002]
+position = Vector2(3.5, -0.75)
+shape = SubResource("RectangleShape2D_glass")
+
+[node name="text" type="Label" parent="." unique_id=1457004469]
+offset_left = -120.0
+offset_top = -260.0
+offset_right = 240.0
+offset_bottom = -220.0
+theme_override_font_sizes/font_size = 26

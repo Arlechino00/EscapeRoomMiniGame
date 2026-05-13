@@ -203,7 +203,14 @@ func _refresh_ui() -> void:
 		
 func _on_slot_cliked(slot_data):
 	print(slot_data)
-	if slot_data.get("id", "") == "puzzle_paper":
+	var item_id = slot_data.get("id", "")
+	if item_id == "puzzle_paper":
 		$"../ReadingUI".open_clue()
+	elif item_id == "Book":
+		var book_ui = get_node_or_null("../BookUI")
+		if book_ui:
+			book_ui.open()
+		else:
+			push_error("BookUI not found!")
 	else:
 		pass

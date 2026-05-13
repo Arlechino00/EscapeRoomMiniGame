@@ -12,9 +12,12 @@ func _ready() -> void:
 	text.hide()
 	if has_node("/root/GameStrings"):
 		_strings = GameStrings.get_spot(spot_id)
-	text.text = _strings.get("prompt_open", "Press E to interact")
-	body_entered.connect(_on_body_entered)
-	body_exited.connect(_on_body_exited)
+		
+	var puzzles = GameSave.get_game_data().get("puzzles", {})
+	if puzzles.get("cable_puzzle", false):
+		text.text = _strings.get("prompt_open", "Press E to interact")
+		body_entered.connect(_on_body_entered)
+		body_exited.connect(_on_body_exited)
 
 func _on_body_entered(body)->void:
 	if body.is_in_group("player"):

@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://n6q4gl8wwc7t"]
+
+[ext_resource type="Script" uid="uid://ccepvnb0uohlv" path="res://scripts/TitleScreen/story_scene.gd" id="1_ri6xc"]
+[ext_resource type="FontFile" uid="uid://d134ck72vnenn" path="res://assets/fonts/Pixelify Sans/PixelifySans-Bold.ttf" id="2_s68dt"]
+[ext_resource type="FontFile" uid="uid://b88vmmbm50u2m" path="res://assets/fonts/Pixelify Sans/PixelifySans-Regular.ttf" id="3_vx3dh"]
+[ext_resource type="AudioStream" uid="uid://bsw8ksir07njg" path="res://assets/Audio/story_audio.wav" id="4_s68dt"]
+
+[node name="StoryScene" type="Node2D" unique_id=398961096]
+script = ExtResource("1_ri6xc")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1537950688]
+
+[node name="Background" type="ColorRect" parent="CanvasLayer" unique_id=1375563796]
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 1)
+
+[node name="StoryLabel" type="RichTextLabel" parent="CanvasLayer" unique_id=1843039221]
+offset_left = 128.0
+offset_top = 160.0
+offset_right = 1824.0
+offset_bottom = 856.0
+theme_override_fonts/normal_font = ExtResource("2_s68dt")
+theme_override_font_sizes/normal_font_size = 85
+bbcode_enabled = true
+
+[node name="ContinueLabel" type="Label" parent="CanvasLayer" unique_id=1338030110]
+offset_left = 1296.0
+offset_top = 944.0
+offset_right = 1872.0
+offset_bottom = 1035.0
+theme_override_fonts/font = ExtResource("3_vx3dh")
+theme_override_font_sizes/font_size = 43
+text = "Press Space to Continue"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1312282001]
+stream = ExtResource("4_s68dt")
+autoplay = true

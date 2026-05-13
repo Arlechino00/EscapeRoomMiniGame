@@ -52,14 +52,14 @@ const START_ROTS = [2, 3, 1,  0, 2, 3,  1, 2, 1]
 @onready var already_label  : Label         = $Background/AlreadyLabel
 @onready var complete_layer : CanvasLayer = $CanvasLayer
 
-var tile_rots : Array = []
-var tiles     : Array = []
-var solved    : bool  = false
+var tile_rots    : Array = []
+var tiles        : Array = []
+var solved       : bool  = false
+var _wrong_count : int   = 0
 
 # ── Init ───────────────────────────────────────────────────────────────────
 func _ready() -> void:
-	var level_id = get_tree().current_scene.name
-	Analytics.puzzle_started("pipe_puzzle", level_id)
+	Analytics.puzzle_started("pipe_puzzle")
 	solved = PuzzleProgress.pipe_puzzle_solved
 
 	if $Background.has_node("BgImage"):
@@ -178,12 +178,13 @@ func _on_check_pressed() -> void:
 		_on_puzzle_solved()
 	else:
 		print("Not solved yet.")
+		_wrong_count += 1
+		Analytics.log_event("mistake_made", {"puzzle_id": "pipe_puzzle", "wrong_attempts": _wrong_count})
 		_shake_check_button()
 
 func _on_puzzle_solved() -> void:
 	solved = true
-	var level_id = get_tree().current_scene.name
-	Analytics.puzzle_solved("pipe_puzzle", level_id)
+	Analytics.puzzle_solved("pipe_puzzle", {"wrong_attempts": _wrong_count})
 	Analytics.flush()
 	PuzzleProgress.puzzle_solved("pipe_puzzle")
 	_play_water_flow()

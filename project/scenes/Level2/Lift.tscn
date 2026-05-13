@@ -3,9 +3,12 @@
 [ext_resource type="Script" uid="uid://dcjv7ux1erooi" path="res://scripts/Level_2/Lift_Level2_3.gd" id="1_s882d"]
 [ext_resource type="Texture2D" uid="uid://bv66rkgs372l5" path="res://assets/Background(Rooms)/Commos/LiftClosed.png" id="2_s882d"]
 [ext_resource type="Texture2D" uid="uid://c21vpktswhuwr" path="res://assets/Background(Rooms)/Commos/LiftOpen.png" id="3_1e5h4"]
+[ext_resource type="Texture2D" uid="uid://ctyxa7goar8u8" path="res://assets/Objects/lvl2/puzzle_1/vines/vine_1.png" id="3_3g8m0"]
+[ext_resource type="Texture2D" uid="uid://dfahucux7g7o2" path="res://assets/Objects/lvl2/puzzle_1/vines/vine_2.png" id="4_d7gbh"]
+[ext_resource type="Texture2D" uid="uid://ceeha0q1otsjy" path="res://assets/Objects/lvl2/puzzle_1/vines/vine_3.png" id="5_n60hw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xwqql"]
-size = Vector2(897.5, 556)
+size = Vector2(516.75, 378)
 
 [node name="Lift" type="Node2D" unique_id=1794680910]
 
@@ -18,6 +21,25 @@ position = Vector2(220.14996, -1413.5599)
 scale = Vector2(0.36229175, 0.31506574)
 texture = ExtResource("2_s882d")
 
+[node name="Vine1" type="Sprite2D" parent="Lift/SpriteClosed" unique_id=1129752050]
+position = Vector2(250.76486, -20.44038)
+texture = ExtResource("3_3g8m0")
+
+[node name="Vine2" type="Sprite2D" parent="Lift/SpriteClosed" unique_id=1282842388]
+position = Vector2(165.19846, -7.744587)
+scale = Vector2(0.8023856, 0.9866364)
+texture = ExtResource("4_d7gbh")
+
+[node name="Vine3" type="Sprite2D" parent="Lift/SpriteClosed" unique_id=331469543]
+position = Vector2(-218.47025, -5.459386)
+scale = Vector2(1, 0.97765714)
+texture = ExtResource("5_n60hw")
+
+[node name="Vine4" type="Sprite2D" parent="Lift/SpriteClosed" unique_id=1389888935]
+position = Vector2(-236.92447, -110.501175)
+scale = Vector2(0.6792763, 0.8058837)
+texture = ExtResource("4_d7gbh")
+
 [node name="SpriteOpen" type="Sprite2D" parent="Lift" unique_id=503088617]
 visible = false
 position = Vector2(220.74998, -1414.68)
@@ -26,7 +48,7 @@ texture = ExtResource("3_1e5h4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Lift" unique_id=487829900]
 visible = false
-position = Vector2(411, -1324)
+position = Vector2(220.625, -1413)
 shape = SubResource("RectangleShape2D_xwqql")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Lift" unique_id=422976353]

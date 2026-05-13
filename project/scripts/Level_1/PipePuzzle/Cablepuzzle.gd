@@ -48,8 +48,7 @@ var _right_slots : Dictionary = {} # color -> slot Control node
 
 # ── Lifecycle ──────────────────────────────────────────────────────────────────
 func _ready() -> void:
-	var level_id = get_tree().current_scene.name
-	Analytics.puzzle_started("cable_puzzle", level_id)
+	Analytics.puzzle_started("cable_puzzle")
 	solved_banner.hide()
 	close_btn.pressed.connect(_close)
 	_reset()
@@ -175,8 +174,7 @@ func _try_connect(global_drop: Vector2) -> void:
 	if best_color == _drag_color:
 		_on_correct_match(_drag_color)
 	else:
-		var level_id = get_tree().current_scene.name
-		Analytics.mistake_made("cable_puzzle", level_id, "wrong_connection")
+		Analytics.log_event("mistake_made", {"puzzle_id": "cable_puzzle", "reason": "wrong_connection"})
 		if _drag_line:
 			_drag_line.queue_free()
 			_drag_line = null
@@ -204,8 +202,7 @@ func _update_attempts_label() -> void:
 	attempts_label.text = "Attempts remaining: %d" % (max_wrong_attempts - _wrong_count)
 
 func _on_puzzle_solved() -> void:
-	var level_id = get_tree().current_scene.name
-	Analytics.puzzle_solved("cable_puzzle", level_id)
+	Analytics.puzzle_solved("cable_puzzle", {"wrong_attempts": _wrong_count})
 	Analytics.flush()
 	complete_layer.visible = true
 	var label = complete_layer.get_node("PuzzleCompleteLabel")

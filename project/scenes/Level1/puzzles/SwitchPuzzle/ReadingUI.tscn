@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://gg83fr4jpppe"]
 
 [ext_resource type="Script" uid="uid://bx2q3hdrt48lt" path="res://scripts/Level_1/SwitchPuzzle/reading_ui.gd" id="1_c2xxc"]
-[ext_resource type="FontFile" uid="uid://d3lowxrvtp2b6" path="res://assets/fonts/TypewriterzDemoBold.ttf" id="2_r23um"]
+[ext_resource type="FontFile" uid="uid://b88vmmbm50u2m" path="res://assets/fonts/Pixelify Sans/PixelifySans-Regular.ttf" id="2_cbbnt"]
+[ext_resource type="FontFile" uid="uid://d3lowxrvtp2b6" path="res://assets/fonts/TypeWriter/TypewriterzDemoBold.ttf" id="2_r23um"]
+[ext_resource type="FontFile" uid="uid://d134ck72vnenn" path="res://assets/fonts/Pixelify Sans/PixelifySans-Bold.ttf" id="3_ou1pc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r23um"]
 bg_color = Color(0.99999994, 0.93605, 0.8716022, 1)
@@ -58,6 +60,8 @@ layout_mode = 2
 custom_minimum_size = Vector2(0, 300)
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_cbbnt")
+theme_override_fonts/bold_font = ExtResource("3_ou1pc")
 theme_override_font_sizes/normal_font_size = 20
 theme_override_font_sizes/bold_font_size = 30
 bbcode_enabled = true

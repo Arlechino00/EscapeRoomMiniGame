@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://cgqk0ed8hlm5y"]
+
+[ext_resource type="Script" uid="uid://bhbain3bf2y4n" path="res://scripts/UI/book_ui.gd" id="1_a6tll"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a6tll"]
+bg_color = Color(0, 0, 0, 0.5882353)
+
+[node name="BookUI" type="CanvasLayer" unique_id=1875310585]
+layer = 9
+script = ExtResource("1_a6tll")
+
+[node name="Panel" type="Panel" parent="." unique_id=1019863207]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_a6tll")
+
+[node name="ColorRect" type="ColorRect" parent="Panel" unique_id=1733796457]
+layout_mode = 0
+offset_left = 600.0
+offset_right = 1320.0
+offset_bottom = 1080.0
+color = Color(1, 0.9372549, 0.87058824, 1)
+
+[node name="Title" type="Label" parent="Panel" unique_id=1373717120]
+layout_mode = 0
+offset_left = 632.0
+offset_top = 24.0
+offset_right = 1280.0
+offset_bottom = 120.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BookText" type="RichTextLabel" parent="Panel" unique_id=873436951]
+layout_mode = 0
+offset_left = 624.0
+offset_top = 160.0
+offset_right = 1296.0
+offset_bottom = 984.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 20
+theme_override_font_sizes/bold_font_size = 25
+bbcode_enabled = true
+
+[node name="PageLabel" type="Label" parent="Panel" unique_id=1195555321]
+layout_mode = 0
+offset_left = 896.0
+offset_top = 1016.0
+offset_right = 1008.0
+offset_bottom = 1072.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="PrevButton" type="Button" parent="Panel" unique_id=1048069022]
+layout_mode = 0
+offset_left = 608.0
+offset_top = 1016.0
+offset_right = 720.0
+offset_bottom = 1071.0
+theme_override_font_sizes/font_size = 30
+text = "← Prev"
+
+[node name="NextButton" type="Button" parent="Panel" unique_id=1000886269]
+layout_mode = 0
+offset_left = 1200.0
+offset_top = 1016.0
+offset_right = 1312.0
+offset_bottom = 1072.0
+theme_override_font_sizes/font_size = 31
+text = "Next →"
+
+[node name="CloseButton" type="Button" parent="Panel" unique_id=73843938]
+layout_mode = 0
+offset_left = 1776.0
+offset_top = 16.0
+offset_right = 1899.0
+offset_bottom = 93.0
+theme_override_font_sizes/font_size = 50
+text = "Back"

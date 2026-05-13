@@ -39,16 +39,16 @@ func open_clue():
 	
 	# Construim textul final
 	var final_text = "[center][b][color=black]" + str(data.get("question", "Fara Titlu")) + "[/color][/b][/center]\n"
-	final_text += "[color=black]------------------------------------------------------[/color]\n\n"
+	final_text += "[color=black]---------------------------------------------------------------------------------------------------[/color]\n\n"
 
 	var statements = data.get("statements", [])
 	var i = 1
 	for s in statements:
 		final_text += "[color=black]" + str(i) + ". " + str(s.get("text", "")) + "[/color]\n\n"
 		i += 1
-	
+	var psText = "[color=black][i] P.S. The switches on the panel correspond to each statement. Choose wisely. From left to right. [/i][/color]"
 	# Aplicăm textul
-	content_label.text = final_text
+	content_label.text = final_text + psText
 	print("3. Rezultat: Textul a fost aplicat cu succes.")
 
 func _on_button_pressed() -> void:

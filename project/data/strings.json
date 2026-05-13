@@ -17,7 +17,11 @@
 	  "prompt_open": "Press E — fix the pipes",
 	  "prompt_use": "Press E — use {item} on terminal",
 	  "prompt_locked": "Terminal Offline — requires {item}"
-	}
+	},
+	  "levers_panel": {
+		  "name": "Levers_Panel",
+		  "prompt_open": "Press E - flip the switches"
+	  }
 	
   },
 
@@ -36,5 +40,179 @@
 	"inventory_title": "Inventory",
 	"inventory_empty": "Empty",
 	"close_button":    "Close"
-  }
+  },
+	"story": {
+		"intro": [
+			"In a distant future, when the world is at a dead end because of pollution,the artificial intelligence systems start a planet defense protocol.",
+			"The biggest AI system, EKKO, turns against humanity, claiming that you are the cause of environmental deterioration,lacking circular thinking about economy and pollution.",
+			"The famous scientist Helsink makes a plan to help you infiltrate in EKKO’s building.",
+			"He builds a small robot named C1-rcle through which you can enter EKKO’s building without being detected.",
+			"Pay attention to the clues left throughout the journey and you will surely manage to pass the levels inside the building and prove to the AI that humans can also have “circular” thinking."
+		]
+	},
+	"dialogue": {
+		"intro": [
+			"Dr. Helsinki: You've finally connected to the robot. That's good news!",
+			"Dr. Helsinki: To move around the facility use 'WASD'",
+			"Dr. Helsinki: If you want to take a break and come back you can press 'ESC' to pause the game",
+			"Dr. Helsinki: Also I left you a book with the necessary information to beat EKKO.",
+			"Dr. Helsinki: 'Press I' to see your inventory and 'click it'.",
+			"Dr. Helsinki: This will also help you solve some puzzles around the building",
+			"Dr. Helsinki: Strange, the power is out. Check the wires."
+		],
+		"wire_puzzle_done": [
+			"Dr. Helsinki: Finally the power has come back.",
+			"Dr. Helsinki: Try to interact with the computer to see if you can get to EKKO."
+		],
+		"pipe_puzzle_done": [
+			"Dr. Helsinki: Strange you still don't have access to the lift.",
+			"Dr. Helsinki: OOH, my systems says the lift isn't calibrated.",
+			"Dr. Helsinki: Strange there seems to be a note in the room.",
+			"Dr. Helsinki: Pick it up (E), maybe it could help you calibrate the lift."
+		],
+		"levers_puzzle_done": [
+			"Dr. Helsinki: Now that the lift is calibrated, take the keycard and go to the next level.",
+			"Dr. Helsinki: Good luck C1-rcle, I will be here if you need anything else!!"
+		],
+		"hint_wire_puzzle": [
+			"Dr. Helsinki: Try to fix the wires.",
+			"Dr. Helsinki: It's the big box with the wires coming out C1-rcle!!!"
+		],
+		"hint_pipe_puzzle": [
+			"Dr. Helsinki: Maybe you have to connect the pipes so it goes to point A to point B.",
+			"Dr. Helsinki: I know you can do it!!"
+		],
+		"hint_levers_puzzle": [
+			"Dr. Helsinki: Try to find which statement is false or true and pull up or down the levers.",
+			"Dr. Helsinki: I think when a lever is down is false."
+		],
+		"hint_lvl2_robot": [
+			"Dr. Helsinki: You should talk to the broken robot. Maybe he needs help.",
+			"Dr. Helsinki: That poor robot seems to be missing something... talk to him!"
+		],
+		"hint_lvl2_hammer": [
+			"Dr. Helsinki: You need a tool to break things. Look for a hammer in the room.",
+			"Dr. Helsinki: A hammer would be very useful right now."
+		],
+		"hint_lvl2_glass": [
+			"Dr. Helsinki: Use that hammer to smash the glass case!",
+			"Dr. Helsinki: The robot's arm is right behind that glass. Break it!"
+		],
+		"hint_lvl2_station": [
+			"Dr. Helsinki: Now that you have the arm, take it to the repair station.",
+			"Dr. Helsinki: The arm is dirty and bent. Use the cleaning station to fix it."
+		],
+		"hint_lvl2_repaired": [
+			"Dr. Helsinki: The arm looks as good as new! Give it back to the robot.",
+			"Dr. Helsinki: Go talk to the robot and give him his clean arm."
+		],
+		"hint_lvl2_lift": [
+			"Dr. Helsinki: You have the keycard! Now go to the lift and use it.",
+			"Dr. Helsinki: The lift is the only way out. Use the keycard there."
+		],
+		"hint_lvl2_ekko": [
+			"Dr. Helsinki: EKKO is testing you. Use the circular economy book I gave you!",
+			"Dr. Helsinki: Read the book in your inventory to answer EKKO's questions."
+		],
+		"lvl2_intro": [
+			"Dr. Helsinki: You've made it to Level 2. This part of the facility is used for robot maintenance.",
+			"Dr. Helsinki: It seems there's a robot here that needs help. See if you can fix him."
+		],
+		"robot_repair_done": [
+			"Dr. Helsinki: Great job repairing that robot!",
+			"Dr. Helsinki: Now use the keycard he gave you to reach the lift and move to the next level."
+		],
+		"robot_lvl2_broken": [
+			"Broken Robot: My arm... I've lost my arm in the crash.",
+			"Broken Robot: I can't move without it. Please help me find it.",
+			"Broken Robot: I saw it fly towards that glass showcase over there. I think it's locked behind it."
+		],
+		"robot_lvl2_has_arm": [
+			"Broken Robot: You found it! But look at it... it's all bent and dirty.",
+			"Broken Robot: You can't just put it back like this. It needs to be straightened and cleaned.",
+			"Broken Robot: There's a repair station nearby. Please fix it for me so I can function again."
+		],
+		"robot_lvl2_repaired": [
+			"Robot: Oh, it feels wonderful to have my arm back! Thank you, friend.",
+			"Robot: You've proven yourself to be a true ally of robots. Take this keycard, it will grant you access to the deeper levels of the facility.",
+			"Robot: Good luck on your mission! I'll stay here and make sure no one follows you."
+		],
+		"ekko_intro": [
+			"EKKO: So... you have reached my domain.",
+			"EKKO: You claim humans can think circularly. Prove it.",
+			"EKKO: Answer my questions correctly and the vines will wither. Fail — and you will be eliminated."
+		],
+		"ekko_correct": [
+			"EKKO: Correct. The vines weaken. Continue..."
+		],
+		"ekko_one_wrong": [
+			"EKKO: Wrong! But I will allow you one mistake.",
+			"EKKO: Consider this your final warning. Think carefully."
+		],
+		"ekko_all_correct": [
+			"EKKO: Impressive. You have proven that circular thinking is within human reach.",
+			"EKKO: The facility is yours. Remember — the circular economy is the only path forward."
+		],
+		"ekko_wrong": [
+			"EKKO: WRONG. Your circular knowledge is insufficient.",
+			"EKKO: You have been eliminated. Return when you are ready to think circularly."
+		]
+	},
+	"book": {
+		"title": "The Experts’ Manual in Circular Economy",
+		"pages": [
+			{
+				"title": "I. Linear vs. Circular Economic Model",
+				"content": "The modern economy has functioned for a long time on a linear model, based on the idea that resources are numerous and cheap. This model assumes the following process: raw materials are extracted, goods are produced from them, the goods are consumed, and then they are thrown away. Often, this approach leads to the depletion of resources, accumulation of waste and environmental pollution.\n\nThus, the circular economy appears as an alternative, which proposes extending the lifespan of products, reducing the consumption of new resources, and also eliminating the notion of 'final waste'. Instead of products becoming useless, they are repaired, reused or transformed into other products."
+			},
+			{
+				"title": "II. The Idea of 'Closed Loop'",
+				"content": "A central principle of the circular economy is closing the material cycle. This means that materials do not leave the economic system, but circulate continuously between uses.\n\nThere are two types of cycles:\n  - Biological: materials return back to nature (e.g. compost)\n  - Technical: materials are reused in the industrial process.\n\nA very important concept is waste valorization, which involves transforming waste into useful resources (e.g. food leftovers become compost; plastic becomes raw material for other products, etc.)"
+			},
+			{
+				"title": "III. How the Circular Economy Creates Value",
+				"content": "The concept of circular economy does not refer only to environmental protection, but also to creating economic value. It operates at:\n  - Macro level: policies and national economies\n  - Meso level: industries and supply chains\n  - Micro level: companies and consumers\n\nAmong the advantages of the circular economy are: cost reduction (because fewer raw materials are used), creation of new markets and innovation. Also, the energy used tends to be renewable, and resources are used much more efficiently."
+			},
+			{
+				"title": "IV. Sustainable Development (SDGs)",
+				"content": "The United Nations created 17 global objectives for a more sustainable future. The circular economy contributes to these objectives by reducing waste, lowering pollution, and using resources efficiently. It also supports economic growth, fosters innovation and contributes to more sustainable cities."
+			},
+			{
+				"title": "V. Practical Examples",
+				"content": "Examples of circular economy applications in the world:\n  - Cities implementing recycling and compost systems\n  - 'Zero waste' programs that significantly reduce the amount of waste\n\nThese initiatives include:\n  - Infrastructure for recycling\n  - Education for citizens\n  - Public policies"
+			},
+			{
+				"title": "VI. European Policies",
+				"content": "The European Commission promotes the circular economy through concrete policies. These policies aim at:\n  - Durable products from the design phase\n  - Transparency towards consumers\n  - Reducing industrial impact\n\nThus, emphasis is placed on durability, reparability and recyclability."
+			},
+			{
+				"title": "VII. Circular Business Models",
+				"content": "The circular economy also changes how companies operate. There are several strategies such as:\n  - Transforming the existing model\n  - Creating new businesses\n  - Expanding activities\n  - Integrating already existing circular models\n\nAlso, service-based models appear (e.g. renting instead of buying), and companies begin to retain responsibility over products."
+			},
+			{
+				"title": "VIII. Bioeconomy and Its Applications",
+				"content": "Bioeconomy is based on the use of biological resources (plants, animals, microorganisms) to create food, energy, materials or even industrial products. It replaces fossil resources, supports sustainability and contributes to reducing emissions.\n\nBioeconomy has diverse applications in several fields:\n\nENVIRONMENT:\n  - Soil cleaning (also called bioremediation)\n  - Pollution reduction\n\nMEDICINE:\n  - Vaccines\n  - Genetic therapies\n\nINDUSTRY:\n  - Bioplastics\n  - Biofuels\n\nAGRICULTURE:\n  - Resistant crops\n  - Biological fertilizers"
+			},
+			{
+				"title": "IX. Circular Bioeconomy",
+				"content": "The concept of circular bioeconomy combines the efficiency of the circular economy with the resources provided by bioeconomy. It focuses on biomass use, reducing biological waste and optimizing the use of available resources."
+			},
+			{
+				"title": "X. The 'Cascading' Principle",
+				"content": "The cascading principle refers to using a resource multiple times, not just once, so biomass can be used in several successive stages.\n\nFor example:\n  - Wood => furniture\n  - Furniture => recycled materials\n  - Materials => energy\n\nThus, the value of the resource is maximized and waste is reduced."
+			},
+			{
+				"title": "XI. Biorefinery",
+				"content": "A biorefinery is a facility that transforms biomass into useful products and produces energy and materials at the same time. Products may include fuels, materials or chemical substances."
+			},
+			{
+				"title": "XII. European Green Deal",
+				"content": "The European Green Deal is the European Union's strategy to transform the current economy into a sustainable one. This includes clean energy, green industry, sustainable mobility and sustainable agriculture.\n\nThe objective of this plan is to achieve climate neutrality by 2050."
+			},
+			{
+				"title": "XIII. Equity and Society",
+				"content": "The transition to a circular economy must be fair and inclusive, providing support for vulnerable groups, equal access to opportunities, as well as education and training.\n\nSustainability is not only about nature, but also about people."
+			}
+		]
+	}
 }

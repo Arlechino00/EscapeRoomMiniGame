@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://kvvh34e4r1sc"]
 
 [ext_resource type="Script" uid="uid://bylv5y7v6hyi1" path="res://scripts/Level_1/CablePuzzle/UI_Interaction.gd" id="1_8ctnk"]
+[ext_resource type="FontFile" uid="uid://d134ck72vnenn" path="res://assets/fonts/Pixelify Sans/PixelifySans-Bold.ttf" id="2_cii7m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ncrcp"]
 size = Vector2(273, 354)
@@ -19,4 +20,5 @@ offset_left = 140.0
 offset_top = 182.0
 offset_right = 239.0
 offset_bottom = 217.0
+theme_override_fonts/font = ExtResource("2_cii7m")
 theme_override_font_sizes/font_size = 25

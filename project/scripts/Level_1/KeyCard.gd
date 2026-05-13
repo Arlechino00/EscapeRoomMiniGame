@@ -4,7 +4,7 @@ extends Area2D
 @export var item_name  : String    = "Item"
 @export var item_color : Color     = Color.GOLD
 @export var item_icon  : Texture2D = null
-@export var required_puzzles: Array[String] = ["pipe_puzzle", "levers_puzzle", "cable_puzzle"]
+#@export var required_puzzles: Array[String] = ["pipe_puzzle", "levers_puzzle", "cable_puzzle"]
 @export var requires_puzzles: bool = false
 
 @onready var text = $text
@@ -31,25 +31,25 @@ func _ready() -> void:
 	body_exited.connect(_on_body_exited)
 	
 	# FINAL CHECK: If we already have this item, disappear immediately
-	if Inventory.has_item(item_name):
+	if GameSave.is_item_picked(item_name) or Inventory.has_item(item_name):
 		_picked = true
 		visible = false
 		$CollisionShape2D.set_deferred("disabled", true)
 		set_process(false)
 
 func _process(_delta) -> void:
-	if _all_puzzles_solved():
+#	if _all_puzzles_solved():
 		visible = true
 		$CollisionShape2D.set_deferred("disabled", false)
 		print("The key has appeared")
 		set_process(false)
 
-func _all_puzzles_solved() -> bool:
-	var puzzles = GameSave.get_game_data().get("puzzles", {})
-	for id in required_puzzles:
-		if not puzzles.get(id, false):
-			return false
-	return true
+#func _all_puzzles_solved() -> bool:
+#	var puzzles = GameSave.get_game_data().get("puzzles", {})
+#	for id in required_puzzles:
+#		if not puzzles.get(id, false):
+#			return false
+#	return true
 
 func interact() -> void:
 	if _picked:
@@ -69,6 +69,7 @@ func interact() -> void:
 		"color": item_color,
 		"icon":  icon,
 	})
+	GameSave.mark_item_as_picked(item_name)
 	text.hide()
 	visible = false
 	$CollisionShape2D.set_deferred("disabled", true)
